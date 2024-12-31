@@ -43,7 +43,7 @@ jobs:
         ls -l $GITHUB_WORKSPACE/Assets/Art/
 
     - name: Reimport Resources with Verbose Output
-      run: godot --headless --reimport -v
+      run: godot --headless --import-all --reimport -v
 
     - name: Open Godot Project to Trigger Import (with verbose output)
       run: godot --headless --export "iOS" build/your_project_name.xcodeproj -v
