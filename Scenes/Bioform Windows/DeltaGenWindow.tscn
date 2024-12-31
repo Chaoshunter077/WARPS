@@ -1,0 +1,198 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqscnr3qhcy2t"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_3wovx"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/delta_gen_window.gd" id="2_hd7od"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_l3h7u"]
+[ext_resource type="Texture2D" uid="uid://cpxayrvouiacl" path="res://Assets/Art/delatgen.png" id="4_xsmut"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_kt0bw"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_n3dx4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovogr"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DeltaGenWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_3wovx")
+script = ExtResource("2_hd7od")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_l3h7u")
+theme_override_font_sizes/font_size = 40
+text = "Delta Genosian"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 348.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Delta Genosians were a specialized unit created to symbiotically pair with a Bioengineered creature. The duo would establish a mental, emotional, and physical connection. An Aethereal link between the two enabled seamless communication and coordination, resulting in a more intelligent and efficient creature, and the Genosian to take on the creature’s characteristics such as enhanced strength and speed.
+
+Post War Delta Genosians are called to the Therion Jungles, having an internal drive to link with a creature. The Aethereal fallout has had adverse effects on some of the hybrid creatures, making the once animal safe haven into a jungle of monsters. Many Deltas perish on this quest before ever finding their companion, but for those that do, the risk is worth the reward.  
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1265.0
+offset_right = 720.0
+offset_bottom = 1211.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Starting Stats
+Attribute Levels:
+- Fortitude: 9
+- Finesse: 9
+- Focus: 9
+Attribute Resistance Levels:
+- Fortitude: 3
+- Finesse: 3
+- Focus: 3
+Size: Medium
+Vigor: 23
+Skill Dice: 3
+
+"
+label_settings = SubResource("LabelSettings_ovogr")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(290, 350)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_xsmut")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme = ExtResource("5_kt0bw")
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -506.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Traits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Choose either a Fortitude or Finesse based Large or smaller Creature to create a permanent link with. You share a life and death link with this creature, if either of you die, the other perishes with them.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Fortitude" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_n3dx4")
+text = "Fortitude"
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "> Twice per day, you may reroll any failed Fortitude roll.
+> -1 to Fortitude Rolls.
+> +2 Fortitude Resistance.
+> +2 Fortitude Attrition.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Finesse" type="Button" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_n3dx4")
+text = "Finesse"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "> Twice per day, you may reroll any failed Finesse roll.
+> -1 to Finesse Rolls.
+> +2 Finesse Resistance.
+> +2 Finesse Attrition. 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Fortitude" to="." method="_on_fortitude_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Finesse" to="." method="_on_finesse_pressed"]

@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxet74fbp3l8p"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_bs211"]
+[ext_resource type="Script" path="res://Scripts/Profession Windows/biochemist_window.gd" id="2_3icgh"]
+[ext_resource type="Texture2D" uid="uid://bgp6k6nc0i647" path="res://Assets/Art/Picture2.png" id="3_y8m48"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="4_50x6b"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_k3s24"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_j4rvk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="BiochemistWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_bs211")
+script = ExtResource("2_3icgh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(310, 820)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_y8m48")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_50x6b")
+theme_override_font_sizes/font_size = 50
+text = "Biochemist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1440.0
+offset_right = 645.0
+offset_bottom = 1036.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Resource 
+A Biochemist uses Natural Ingredients found around the world to create Serums that allow for some amazing feats when absorbed into the bloodstream. Plants, Monster Parts, and many other Ingredients can be utilized in making Serums. 
+
+Kit 
+A Biochemist kit grants you a -1 to Biochemistry rolls. This kit allows you to create Poor or Fine quality serums. A Biochemist Kit will cost 200 gold. This Kit is portable and can be used while on the road.
+
+Lab 
+A Biochemist Lab grants you a -2 to Biochemistry rolls and allows you to create Superior serums in addition to Poor and Fine quality serums. A Biochemist Lab will cost 2,000 gold to install in a room. 
+
+Shop 
+A Biochemist Shop will allow you to craft Exquisite and Flawless serums in addition to Poor, Fine, and Superior serums. Your shop operates independently from you. A Biochemist Shop will cost 20,000 gold to establish as well as an empty storefront. Roll a d4 on the Shop Success or Failure table based on your daily roll."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_k3s24")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_j4rvk")
+text = "Select"
+
+[node name="Traits" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -865.0
+offset_right = 325.0
+offset_bottom = 1611.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_50x6b")
+theme_override_font_sizes/font_size = 22
+text = "“A Biochemist is essential to any adventuring party. They are capable of taking natural ingredients and turning them into powerful serums. A Biochemist cooking a reinvigoration serum is common knowledge, but there are tales of some who can condense dragons’ blood into a brew that will allow the drinker to breathe fire.”"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

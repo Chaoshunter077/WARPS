@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://c30gkvxtio5nu"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_bhtgg"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/imperium_window.gd" id="2_n14rh"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_jqofq"]
+[ext_resource type="Texture2D" uid="uid://cpfo47jnnc862" path="res://Assets/Art/DALL·E 2024-11-21 20.31.13 - An action shot of a sleek humanoid mecha in dynamic motion, drawn in black and white line art with a serious tone. The mecha is depicted leaping or do.png" id="4_xy4c2"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_y306d"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_ivl8v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="ImperiumWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_bhtgg")
+script = ExtResource("2_n14rh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jqofq")
+theme_override_font_sizes/font_size = 50
+text = "Mecha Imperium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 348.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "There’s an old saying from The Great Mecha Wars, if you think you saw something, run for it. Too many lives have been lost from shaking off the suspicion of a slight glimmer of light where it didn’t belong, and the Imperium were the ones responsible. These killing machines had a higher body count than entire fleets of Genosians, and their track record carries into the Post War Zandaka Prime.
+
+With their cloaking abilities and lethal reflexes, the only use for the Imperium nowadays are assassins, bounty hunters, and elite bodyguards, if you can afford them that is. Spectators of the Mecharena have a difficult time tracking one of these in a fight, but the sudden expulsion of blood from its adversary quickly readjusts their focus to the reigning champion. 
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -1015.0
+offset_right = 625.0
+offset_bottom = 1461.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels:
+- Fortitude: 8
+- Finesse: 10
+- Focus: 8
+Attribute Resistance Levels:
+- Fortitude: 0
+- Finesse: 3
+- Focus: 0
+Size: Medium
+Vigor: 23
+Skill Dice: 3
+
+
+
+
+
+
+
+Starting Traits
+> Twice per day, you may reroll a failed Finesse Roll.
+> +2 Finesse Attrition.
+> +1 SD
+> You have the Invisibility EMA, can use Finesse when activating it, and you have no usage cap.
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 600)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xy4c2")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_y306d")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_ivl8v")
+text = "Select"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

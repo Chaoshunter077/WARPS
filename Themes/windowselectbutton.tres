@@ -1,0 +1,33 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://771ftd4h4o2d"]
+
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="1_ewtfr"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="2_kenb3"]
+[ext_resource type="Texture2D" uid="uid://56gsdnn3557j" path="res://Assets/UI/panel_grey_bolts_blue.svg" id="3_a1cps"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq4fq"]
+texture = ExtResource("2_kenb3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sk6lj"]
+texture = ExtResource("3_a1cps")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oodfc"]
+texture = ExtResource("2_kenb3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_ewtfr")
+Button/styles/hover = SubResource("StyleBoxTexture_dq4fq")
+Button/styles/normal = SubResource("StyleBoxTexture_sk6lj")
+Button/styles/pressed = SubResource("StyleBoxTexture_oodfc")

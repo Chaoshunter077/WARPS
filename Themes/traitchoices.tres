@@ -1,0 +1,78 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://1ubsn0g5h2ry"]
+
+[ext_resource type="Texture2D" uid="uid://56gsdnn3557j" path="res://Assets/UI/panel_grey_bolts_blue.svg" id="1_nudw0"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="1_wir38"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b18h2"]
+texture = ExtResource("1_nudw0")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vph2t"]
+texture = ExtResource("1_nudw0")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvoov"]
+texture = ExtResource("1_nudw0")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+OptionButton/font_sizes/font_size = 72
+OptionButton/fonts/font = ExtResource("1_wir38")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_b18h2")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_vph2t")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_xvoov")
+PopupMenu/colors/font_accelerator_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_disabled_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_outline_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_separator_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_separator_outline_color = Color(0, 0, 0, 1)
+PopupMenu/constants/h_separation = 0
+PopupMenu/constants/icon_max_width = 0
+PopupMenu/constants/indent = 0
+PopupMenu/constants/item_end_padding = 0
+PopupMenu/constants/item_start_padding = 0
+PopupMenu/constants/outline_size = 0
+PopupMenu/constants/separator_outline_size = 0
+PopupMenu/constants/v_separation = 5
+PopupMenu/font_sizes/font_separator_size = 16
+PopupMenu/font_sizes/font_size = 26
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+PopupMenu/icons/checked = null
+PopupMenu/icons/checked_disabled = null
+PopupMenu/icons/radio_checked = null
+PopupMenu/icons/radio_checked_disabled = null
+PopupMenu/icons/radio_unchecked = null
+PopupMenu/icons/radio_unchecked_disabled = null
+PopupMenu/icons/submenu = null
+PopupMenu/icons/submenu_mirrored = null
+PopupMenu/icons/unchecked = null
+PopupMenu/icons/unchecked_disabled = null
+PopupMenu/styles/hover = null
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = null
+PopupMenu/styles/separator = null
+ScrollContainer/styles/panel = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/decrement_pressed = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/icons/increment_pressed = null
+VScrollBar/styles/grabber = null
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null

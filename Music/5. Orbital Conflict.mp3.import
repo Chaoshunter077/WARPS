@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://baqc6efgwgdu1"
+path="res://.godot/imported/5. Orbital Conflict.mp3-eda370d5d41506c03ce22e18f683b9ef.mp3str"
+
+[deps]
+
+source_file="res://Music/5. Orbital Conflict.mp3"
+dest_files=["res://.godot/imported/5. Orbital Conflict.mp3-eda370d5d41506c03ce22e18f683b9ef.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

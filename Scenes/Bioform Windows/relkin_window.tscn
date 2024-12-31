@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=3 uid="uid://eeh1n2garl3i"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_n28fp"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/relkin_window.gd" id="2_7sr2n"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_qsons"]
+[ext_resource type="Texture2D" uid="uid://bgi3wkfmja0b2" path="res://Assets/Art/Relkin 2.png" id="4_daxgn"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_bxx3p"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_bqcv2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="RelkinWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_n28fp")
+script = ExtResource("2_7sr2n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(390, 450)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("4_daxgn")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qsons")
+theme_override_font_sizes/font_size = 50
+text = "Relkin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 348.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Small in size yet noble in heart, these small folk live for the simple pleasures in life. They thrive in small communities away from civilization, passing their time with pipe smoking, ale brewing, and a few games of Drunkards & Daggers. The Great Mecha Wars had a deep impact on the Relkins way of life, proving even to themselves that they were capable of greater feats than simply passing the time. 
+
+Since the end of the war, many Relkin have returned to their beloved home, The Barrow. Other, more adventurous Relkin, seem to have grown more interested in the affairs of other species and the thrill of risking their lives for a greater cause. Anyone in need of light feet and nimble fingers can often acquire a Relkins service with ease, if they aren’t busy combating their new adversaries the Felkin that is… 
+
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1115.0
+offset_right = 720.0
+offset_bottom = 1361.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels:
+- Fortitude: 8
+- Finesse: 11
+- Focus: 9
+Attribute Resistance Levels:
+- Fortitude: 0
+- Finesse: 8
+- Focus: 0
+Size: Small
+Vigor: 15
+Skill Dice: 2
+
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_bxx3p")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_bqcv2")
+text = "Select"
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -740.0
+offset_right = 625.0
+offset_bottom = 1736.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Traits
+>	Twice per day, you may reroll a failed Finesse roll.
+>	-2 to Pickpocket and Lockpicking rolls.
+>	-2 to Resistance Rolls.
+>	You may use Finesse when attacking with One-handed Fortitude weapons.
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

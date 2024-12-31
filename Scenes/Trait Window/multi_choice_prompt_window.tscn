@@ -1,0 +1,155 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmc1dyw3v55ge"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_rqxig"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/multi_choice_prompt_window.gd" id="2_vh2md"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_8re3m"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="4_wpexk"]
+[ext_resource type="Texture2D" uid="uid://bb5gtcxu4gdj6" path="res://Assets/UI/panel_grey_bolts_red.svg" id="5_b0opl"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="6_ybok5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q6g53"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4e3fn"]
+texture = ExtResource("5_b0opl")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4qrum"]
+texture = ExtResource("5_b0opl")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sence"]
+texture = ExtResource("5_b0opl")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nv7x3"]
+texture = ExtResource("6_ybok5")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57sdq"]
+texture = ExtResource("6_ybok5")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_altbu"]
+texture = ExtResource("6_ybok5")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="Multi Choice Prompt Window" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(400, 400)
+theme = ExtResource("1_rqxig")
+script = ExtResource("2_vh2md")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_q6g53")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8re3m")
+theme_override_font_sizes/font_size = 40
+text = "Would you like to remove a previous selection or choose another?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Hidden Trait Label" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8re3m")
+theme_override_font_sizes/font_size = 40
+text = "Choose Wisely..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -78.0
+offset_right = 175.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Cancel" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_wpexk")
+theme_override_colors/font_hover_color = Color(0.658824, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.658824, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxTexture_4e3fn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4qrum")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sence")
+text = "Cancel"
+
+[node name="Remove" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_wpexk")
+theme_override_colors/font_hover_color = Color(0.443137, 0.72549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.443137, 0.72549, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxTexture_nv7x3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_57sdq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_altbu")
+text = "Remove"
+
+[node name="Choose" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_wpexk")
+theme_override_colors/font_hover_color = Color(0.443137, 0.72549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.443137, 0.72549, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxTexture_nv7x3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_57sdq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_altbu")
+text = "Choose"
+
+[connection signal="pressed" from="HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="HBoxContainer/Remove" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="HBoxContainer/Remove" to="." method="_on_remove_pressed"]
+[connection signal="pressed" from="HBoxContainer/Choose" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="HBoxContainer/Choose" to="." method="_on_choose_pressed"]

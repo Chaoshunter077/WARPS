@@ -1,0 +1,446 @@
+[gd_scene load_steps=34 format=3 uid="uid://bo8lg03pm6h77"]
+
+[ext_resource type="Script" path="res://Scripts/Profession Windows/profession.gd" id="1_kinvc"]
+[ext_resource type="Theme" uid="uid://5kthnogagsyv" path="res://Themes/Header.tres" id="2_4bkg0"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_d2y7p"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="4_47x7x"]
+[ext_resource type="Texture2D" uid="uid://56gsdnn3557j" path="res://Assets/UI/panel_grey_bolts_blue.svg" id="5_3goal"]
+[ext_resource type="PackedScene" uid="uid://cxcvixo113he6" path="res://Scenes/Misc/mute_button.tscn" id="6_sfh2t"]
+[ext_resource type="PackedScene" uid="uid://bkjnrdy1ys8aj" path="res://Scenes/Misc/home_button.tscn" id="7_tlaf2"]
+[ext_resource type="PackedScene" uid="uid://d4a0r2vxasig7" path="res://Scenes/Misc/NextBackButtons/next_button.tscn" id="8_bh2gl"]
+[ext_resource type="Script" path="res://Scenes/Misc/NextBackButtons/next_traits.gd" id="9_dvypc"]
+[ext_resource type="PackedScene" uid="uid://bqaocuk6m7nl1" path="res://Scenes/Misc/NextBackButtons/back_button.tscn" id="10_vxevg"]
+[ext_resource type="Script" path="res://Scripts/NextBackButtons/back_namebioform_button.gd" id="11_xybbp"]
+[ext_resource type="PackedScene" uid="uid://bl70c1d6cuua7" path="res://Scenes/Profession Windows/sd_profession_window.tscn" id="12_16tc8"]
+[ext_resource type="PackedScene" uid="uid://dxet74fbp3l8p" path="res://Scenes/Profession Windows/biochemist_window.tscn" id="13_8xivn"]
+[ext_resource type="PackedScene" uid="uid://bcukvqdc3xsnw" path="res://Scenes/Profession Windows/metalsmith_window.tscn" id="14_sjxoh"]
+[ext_resource type="PackedScene" uid="uid://dqo7axh0kccqq" path="res://Scenes/Profession Windows/augmenter_window.tscn" id="15_70a6t"]
+[ext_resource type="PackedScene" uid="uid://bwagha33fntqd" path="res://Scenes/Profession Windows/technician_window.tscn" id="16_f7rbw"]
+[ext_resource type="PackedScene" uid="uid://i8g3j43c62sc" path="res://Scenes/Profession Windows/mechanizer_window.tscn" id="17_hfg1u"]
+[ext_resource type="PackedScene" uid="uid://be3sf6ouayv17" path="res://Scenes/Profession Windows/performer_window.tscn" id="18_km15g"]
+[ext_resource type="Theme" uid="uid://daxhnwdrbnfq7" path="res://Themes/Title.tres" id="19_1k8ca"]
+[ext_resource type="Theme" uid="uid://3cpw440riifq" path="res://Themes/DropMenu2.tres" id="20_6d4u0"]
+[ext_resource type="Script" path="res://Scripts/Misc/fortitude_sd.gd" id="21_7jwh5"]
+[ext_resource type="Script" path="res://Scripts/Misc/finesse_sd_button.gd" id="22_mcqbn"]
+[ext_resource type="Script" path="res://Scripts/Misc/focus_sd_button.gd" id="23_5c3xo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbix7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjr2k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxs07"]
+texture = ExtResource("4_47x7x")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4a54c"]
+texture = ExtResource("5_3goal")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rf43s"]
+texture = ExtResource("4_47x7x")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_gs6n2"]
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.0901961, 0.662745, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.0901961, 0.662745, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 60
+Button/fonts/font = ExtResource("3_d2y7p")
+Button/styles/disabled = SubResource("StyleBoxFlat_hbix7")
+Button/styles/focus = SubResource("StyleBoxFlat_wjr2k")
+Button/styles/hover = SubResource("StyleBoxTexture_mxs07")
+Button/styles/normal = SubResource("StyleBoxTexture_4a54c")
+Button/styles/pressed = SubResource("StyleBoxTexture_rf43s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgnxr"]
+texture = ExtResource("4_47x7x")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cnrbf"]
+texture = ExtResource("4_47x7x")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kywtm"]
+texture = ExtResource("4_47x7x")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_bwqga"]
+
+[node name="profession" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kinvc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -147.0
+offset_right = 312.0
+offset_bottom = 449.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="profession" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4bkg0")
+theme_override_font_sizes/font_size = 60
+text = "Profession: Not Chosen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="BiochemistButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 60
+text = "Biochemist"
+
+[node name="MetalsmithButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 60
+text = "Metalsmith"
+
+[node name="TechnicianButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 60
+text = "Technician"
+
+[node name="MechanizerButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 60
+text = "Mechanizer"
+
+[node name="AugmenterButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 60
+text = "Augmenter"
+
+[node name="PerformerButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 60
+text = "Performer"
+
+[node name="CustomButton" type="Button" parent="VBoxContainer" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 60
+disabled = true
+text = "Custom"
+
+[node name="MuteButton" parent="." instance=ExtResource("6_sfh2t")]
+layout_mode = 1
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 103.0
+grow_vertical = 1
+
+[node name="Home" parent="." instance=ExtResource("7_tlaf2")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -103.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 103.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="NextButton" parent="." instance=ExtResource("8_bh2gl")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -80.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_cgnxr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cnrbf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kywtm")
+script = ExtResource("9_dvypc")
+allocated_sd = 0
+profession_check = 0
+sd_check = 0
+
+[node name="BackButton" parent="." instance=ExtResource("10_vxevg")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -80.0
+offset_right = 110.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_d2y7p")
+theme_override_font_sizes/font_size = 50
+script = ExtResource("11_xybbp")
+
+[node name="SD_Profession_Window" parent="." instance=ExtResource("12_16tc8")]
+visible = false
+
+[node name="BiochemistWindow" parent="." instance=ExtResource("13_8xivn")]
+visible = false
+
+[node name="MetalsmithWindow" parent="." instance=ExtResource("14_sjxoh")]
+visible = false
+
+[node name="AugmenterWindow" parent="." instance=ExtResource("15_70a6t")]
+visible = false
+
+[node name="TechnicianWindow" parent="." instance=ExtResource("16_f7rbw")]
+visible = false
+
+[node name="MechanizerWindow" parent="." instance=ExtResource("17_hfg1u")]
+visible = false
+
+[node name="PerformerWindow" parent="." instance=ExtResource("18_km15g")]
+visible = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 167.0
+offset_right = 350.0
+offset_bottom = 407.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("19_1k8ca")
+theme_override_fonts/font = ExtResource("3_d2y7p")
+theme_override_font_sizes/font_size = 44
+text = "Skill Dice Allocation:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="Fortitude" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_bwqga")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/Fortitude"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_4bkg0")
+text = "Fortitude"
+horizontal_alignment = 1
+
+[node name="Fortitude_SD_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer/Fortitude/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -63.0
+offset_right = 44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("20_6d4u0")
+flat = true
+script = ExtResource("21_7jwh5")
+
+[node name="Finesse" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_bwqga")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/Finesse"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_4bkg0")
+text = "Finesse"
+horizontal_alignment = 1
+
+[node name="Finesse_SD_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer/Finesse/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -63.0
+offset_right = 44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("20_6d4u0")
+script = ExtResource("22_mcqbn")
+
+[node name="Focus" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_bwqga")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/Focus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_4bkg0")
+text = "Focus"
+horizontal_alignment = 1
+
+[node name="Focus_SD_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer/Focus/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -63.0
+offset_right = 44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("20_6d4u0")
+script = ExtResource("23_5c3xo")
+
+[connection signal="pressed" from="VBoxContainer/GridContainer/BiochemistButton" to="." method="_on_biochemist_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/MetalsmithButton" to="." method="_on_metalsmith_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/TechnicianButton" to="." method="_on_technician_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/MechanizerButton" to="." method="_on_mechanizer_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/AugmenterButton" to="." method="_on_augmenter_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/PerformerButton" to="." method="_on_performer_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_SD_Button" to="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_SD_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_SD_Button" to="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_SD_Button" method="_on_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_SD_Button" to="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_SD_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_SD_Button" to="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_SD_Button" method="_on_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer/Focus/Label/Focus_SD_Button" to="VBoxContainer2/HBoxContainer/Focus/Label/Focus_SD_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Focus/Label/Focus_SD_Button" to="VBoxContainer2/HBoxContainer/Focus/Label/Focus_SD_Button" method="_on_pressed"]

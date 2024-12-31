@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxcvixo113he6"]
+
+[ext_resource type="Texture2D" uid="uid://byw5qd630xmhv" path="res://Assets/Art/Sound On.jpg" id="1_djiup"]
+[ext_resource type="Texture2D" uid="uid://0nh1i0og0142" path="res://Assets/Art/Sound Off.jpg" id="2_jatr6"]
+[ext_resource type="Script" path="res://Scripts/Misc/MuteButton.gd" id="3_4qfdg"]
+
+[node name="MuteButton" type="TextureButton"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -102.0
+offset_right = 103.0
+offset_bottom = 1.0
+grow_vertical = 0
+toggle_mode = true
+texture_normal = ExtResource("1_djiup")
+texture_pressed = ExtResource("2_jatr6")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_4qfdg")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

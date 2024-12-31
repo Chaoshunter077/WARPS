@@ -1,0 +1,199 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0xapryf7yaa4"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_h2uq3"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/epsilon_window.gd" id="2_x7j6o"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_1jjcd"]
+[ext_resource type="Texture2D" uid="uid://dblg7r0nbbmdt" path="res://Assets/Art/DALL·E 2024-11-20 08.23.04 - A full-body depiction of a Virekai in a shamanistic style, drawn in black and white line art with intricate and serious tones. The Virekai has orcish .png" id="4_dtu67"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_3ernf"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_mp28e"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="EpsilonWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_h2uq3")
+script = ExtResource("2_x7j6o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1jjcd")
+theme_override_font_sizes/font_size = 50
+text = "Epsilon Virekai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_right = -10.0
+offset_bottom = 581.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Epsilon Virekai are one of many horrors that roam the landscapes of Zandaka Prime.  The strong smell of metal is usually a precursor to the appearance of the Epsilon Virekai, as they literally bathe in the blood of their defeated adversaries. These Virekai are much rarer than the Gamma Virekai, but their powers are unparalleled even by the strongest warriors. Every Clan Chief usually has their own private Epsilon Virekai to help maintain order, perform rituals, and keep them at peak physical and mental condition. 
+
+There are few Epsilon Virekai in the civilized world of a post war Zandaka Prime, but those that choose to reside amongst the populace commit themselves to only using animal blood and use their abilities to help the sick and wounded. If they aren’t healers, you can usually find one peddling fortune telling and other mystical oddities to make a living.  
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1065.0
+offset_right = 720.0
+offset_bottom = 1411.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels:
+- Fortitude: 9
+- Finesse: 9
+- Focus: 9
+Attribute Resistance Levels:
+- Fortitude: 3
+- Finesse: 3
+- Focus: 3
+Size: Medium
+Vigor: 23
+Skill Dice: 3
+
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(365, 450)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("4_dtu67")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_3ernf")
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Traits
+When you kill a creature, you harness their essence to expend on any of the following:"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "> +1 Energy.
+> +/-2 on any roll."
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "> Stabilize an Ally.
+> -1 Wound from you or an ally."
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "You may only harness one essence at a time, and you may also self-inflict a wound to use your own essence for these effects."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_mp28e")
+text = "Select"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

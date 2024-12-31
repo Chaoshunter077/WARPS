@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3ju4w62wfmsc"
+path="res://.godot/imported/4. They Are Coming for Us.mp3-4e764f3a41b561930c00f9b28d3cab00.mp3str"
+
+[deps]
+
+source_file="res://Music/4. They Are Coming for Us.mp3"
+dest_files=["res://.godot/imported/4. They Are Coming for Us.mp3-4e764f3a41b561930c00f9b28d3cab00.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

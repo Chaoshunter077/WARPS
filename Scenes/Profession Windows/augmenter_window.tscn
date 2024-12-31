@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqo7axh0kccqq"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_7wc24"]
+[ext_resource type="Script" path="res://Scripts/Profession Windows/augmenter_window.gd" id="2_j6kx5"]
+[ext_resource type="Texture2D" uid="uid://iv6th7eih62" path="res://Assets/Art/Picture4.png" id="3_twrbx"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="4_jf32o"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_ppim7"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_xjoqt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="AugmenterWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_7wc24")
+script = ExtResource("2_j6kx5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(275, 760)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_twrbx")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jf32o")
+theme_override_font_sizes/font_size = 50
+text = "Augmenter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1440.0
+offset_right = 670.0
+offset_bottom = 1036.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Resource 
+An Augmenter salvages chips and repurposes them to integrate additional FMA’s and EMA’s into equipment. Chips can be found in any old tech, but Quantum Chips are rumored to be only in the deepest of the old Aethmir Labs.  
+
+Kit 
+An Augmenter kit grants you a -1 to Augmenting rolls. You can create Poor and Fine Augments. Augments have one use per day. An Augmenter Kit will cost 200 gold.  
+
+Lab 
+An Augmenter Lab grants you a -2 to Augmenting rolls and allows you to create Superior Augments in addition to Poor and Fine. Augments with abilities that have the unlimited tag now grant a constant effect while worn. An Augmenting Lab will cost 2,000 gold to install in a room.  
+
+Shop 
+An Augmenter shop will allow you to create Exquisite and Flawless Augments in addition to Poor, Fine, and Superior. Your shop operates independently from you. An Augmenting Shop will cost 20,000 gold to establish. Roll a d4 on the Shop Success or Failure table based on your daily roll.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_ppim7")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_xjoqt")
+text = "Select"
+
+[node name="Traits" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -865.0
+offset_right = 335.0
+offset_bottom = 1611.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jf32o")
+theme_override_font_sizes/font_size = 22
+text = "“Augmenters improve equipment by creating and implanting temporary FMA and EMA modules, allowing the unpracticed to utilize special abilities when usually they could not. Ancient knowledge may have been lost with the passing of generations, but their remnants can be found buried in the deepest ruins or in the hands of some very lucky nomads...”
+"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

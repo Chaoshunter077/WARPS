@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbirfrjlpwi6b"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_vdoyg"]
+[ext_resource type="Script" path="res://Scenes/saved_character_popup_window.gd" id="2_6pgn8"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_jx2yq"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="4_rwhtt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jasj4"]
+
+[node name="DeleteCharacterPopupWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(600, 1000)
+theme = ExtResource("1_vdoyg")
+script = ExtResource("2_6pgn8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_jasj4")
+
+[node name="name" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 10.0
+offset_right = 225.0
+offset_bottom = 212.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jx2yq")
+theme_override_font_sizes/font_size = 47
+text = "Delete a Character"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -300.0
+offset_right = 150.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_bottom = 78.0
+grow_horizontal = 0
+theme = ExtResource("4_rwhtt")
+theme_override_font_sizes/font_size = 29
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://gq4q1br4qmnh"]
+
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="1_aqfk3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksubd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phuck"]
+
+[resource]
+LineEdit/font_sizes/font_size = 60
+LineEdit/fonts/font = ExtResource("1_aqfk3")
+LineEdit/styles/focus = SubResource("StyleBoxTexture_ksubd")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_phuck")

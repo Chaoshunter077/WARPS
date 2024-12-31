@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="WARPS"
+run/main_scene="res://Scenes/Main.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+
+[audio]
+
+buses/default_bus_layout="res://Themes/default_bus_layout.tres"
+
+[autoload]
+
+Global="*res://Scripts/global.gd"
+Music="*res://Scenes/Misc/Music.tscn"
+Character_Data="*res://Character_Data.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[global_group]
+
+Button=""
+Title=""
+
+[gui]
+
+theme/default_font_generate_mipmaps=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

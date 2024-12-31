@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl70c1d6cuua7"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_ksr2x"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="2_2mvka"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="3_qpvwk"]
+[ext_resource type="Script" path="res://Scripts/Misc/warningbutton.gd" id="4_l8e8l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jasj4"]
+
+[node name="SD_Profession_Window" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(300, 200)
+theme = ExtResource("1_ksr2x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_jasj4")
+
+[node name="warning" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mvka")
+theme_override_font_sizes/font_size = 35
+text = "Attention!"
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -33.5
+offset_right = 131.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2mvka")
+theme_override_font_sizes/font_size = 21
+text = "Profession and SD allocation are required to proceed."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_qpvwk")
+theme_override_font_sizes/font_size = 15
+text = "Continue"
+script = ExtResource("4_l8e8l")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

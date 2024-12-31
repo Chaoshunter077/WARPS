@@ -1,0 +1,547 @@
+[gd_scene load_steps=24 format=3 uid="uid://b5nyct6q5n3wi"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_68uit"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/Custom_window.gd" id="2_w6koh"]
+[ext_resource type="Theme" uid="uid://bk4m6ypnvx64j" path="res://Themes/line_edit.tres" id="3_nspju"]
+[ext_resource type="Theme" uid="uid://5kthnogagsyv" path="res://Themes/Header.tres" id="4_k0xeu"]
+[ext_resource type="Theme" uid="uid://daxhnwdrbnfq7" path="res://Themes/Title.tres" id="6_upx3q"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="7_u6v86"]
+[ext_resource type="Theme" uid="uid://3cpw440riifq" path="res://Themes/DropMenu2.tres" id="8_154a7"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="10_1smmr"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="11_fme0o"]
+[ext_resource type="Script" path="res://Scripts/Misc/fortitude_attribute_button.gd" id="13_lvit7"]
+[ext_resource type="Script" path="res://Scripts/Misc/finesse_attritbute_button.gd" id="14_j0hv4"]
+[ext_resource type="Script" path="res://Scripts/Misc/focus_attribute_button.gd" id="15_26i62"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="16_7oaea"]
+[ext_resource type="Script" path="res://Scripts/Misc/fortitude_resistance_button.gd" id="16_is0jj"]
+[ext_resource type="Script" path="res://Scripts/Misc/finesse_resistance_button.gd" id="17_wl2gs"]
+[ext_resource type="Script" path="res://Scripts/Misc/focus_resistance_button.gd" id="18_vcp5u"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_obgxr"]
+
+[sub_resource type="Theme" id="Theme_q7wmt"]
+
+[sub_resource type="FontFile" id="FontFile_4evlb"]
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_0d4cc"]
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_klgpc"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="FontVariation" id="FontVariation_dx8da"]
+
+[sub_resource type="FontFile" id="FontFile_4vqvj"]
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="CustomBioWindow" type="Window"]
+initial_position = 1
+size = Vector2i(680, 1240)
+content_scale_mode = 1
+content_scale_aspect = 1
+theme = ExtResource("1_68uit")
+script = ExtResource("2_w6koh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_obgxr")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme = ExtResource("3_nspju")
+placeholder_text = "Bioform Name"
+alignment = 1
+
+[node name="Size2" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Size" type="HBoxContainer" parent="Size2"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Size2/Size"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_upx3q")
+theme_override_fonts/font = ExtResource("7_u6v86")
+theme_override_font_sizes/font_size = 30
+text = "Size:"
+
+[node name="LevelSelect" type="OptionButton" parent="Size2/Size/Label"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = 21.0
+offset_right = -6.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("8_154a7")
+theme_override_font_sizes/font_size = 20
+alignment = 1
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Small"
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Large"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Size2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_upx3q")
+theme_override_fonts/font = ExtResource("7_u6v86")
+theme_override_font_sizes/font_size = 30
+text = "Vigor:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Size2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_upx3q")
+theme_override_fonts/font = ExtResource("7_u6v86")
+theme_override_font_sizes/font_size = 30
+text = "SD: "
+horizontal_alignment = 1
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("10_1smmr")
+theme_override_font_sizes/font_size = 25
+text = "Confirm"
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -72.0
+offset_right = 120.0
+grow_vertical = 0
+theme = ExtResource("11_fme0o")
+theme_override_fonts/font = ExtResource("7_u6v86")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -370.0
+offset_right = 325.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_upx3q")
+theme_override_fonts/font = ExtResource("7_u6v86")
+theme_override_font_sizes/font_size = 40
+text = "Attribute Levels: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+alignment = 1
+
+[node name="Fortitude" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_q7wmt")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/Fortitude"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_k0xeu")
+theme_override_font_sizes/font_size = 31
+text = "Fortitude"
+horizontal_alignment = 1
+
+[node name="Fortitude_Atr_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer/Fortitude/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -76.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_154a7")
+theme_override_font_sizes/font_size = 60
+flat = true
+script = ExtResource("13_lvit7")
+
+[node name="Finesse" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_q7wmt")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/Finesse"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_k0xeu")
+theme_override_font_sizes/font_size = 31
+text = "Finesse"
+horizontal_alignment = 1
+
+[node name="Finesse_Atr_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer/Finesse/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -76.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_154a7")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("14_j0hv4")
+
+[node name="Focus" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_q7wmt")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/Focus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_k0xeu")
+theme_override_font_sizes/font_size = 31
+text = "Focus"
+horizontal_alignment = 1
+
+[node name="Focus_Atr_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer/Focus/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -76.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_154a7")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("15_26i62")
+
+[node name="Label3" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("7_u6v86")
+theme_override_font_sizes/font_size = 40
+text = "Attribute Levels: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_upx3q")
+theme_override_fonts/font = ExtResource("7_u6v86")
+theme_override_font_sizes/font_size = 40
+text = "Resistance Levels:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+alignment = 1
+
+[node name="Fortitude" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_q7wmt")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2/Fortitude"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_k0xeu")
+theme_override_font_sizes/font_size = 31
+text = "Fortitude"
+horizontal_alignment = 1
+
+[node name="Fortitude_Res_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer2/Fortitude/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -76.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_154a7")
+theme_override_font_sizes/font_size = 60
+flat = true
+script = ExtResource("16_is0jj")
+
+[node name="Finesse" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_q7wmt")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2/Finesse"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_k0xeu")
+theme_override_font_sizes/font_size = 31
+text = "Finesse"
+horizontal_alignment = 1
+
+[node name="Finesse_Res_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer2/Finesse/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -76.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_154a7")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("17_wl2gs")
+
+[node name="Focus" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_q7wmt")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2/Focus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_k0xeu")
+theme_override_font_sizes/font_size = 31
+text = "Focus"
+horizontal_alignment = 1
+
+[node name="Focus_Res_Button" type="OptionButton" parent="VBoxContainer2/HBoxContainer2/Focus/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -76.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_154a7")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("18_vcp5u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = 280.0
+offset_right = 325.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TraitType" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("16_7oaea")
+theme_override_fonts/font = SubResource("FontFile_4evlb")
+theme_override_font_sizes/font_size = 30
+alignment = 1
+item_count = 6
+popup/item_0/text = "Fortitude"
+popup/item_1/text = "Finesse"
+popup/item_1/id = 1
+popup/item_2/text = "Focus"
+popup/item_2/id = 2
+popup/item_3/text = "Energy"
+popup/item_3/id = 3
+popup/item_4/text = "Vigor"
+popup/item_4/id = 4
+popup/item_5/text = "Skill"
+popup/item_5/id = 5
+
+[node name="TraitDescription" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("16_7oaea")
+theme_override_fonts/font = SubResource("FontFile_0d4cc")
+theme_override_font_sizes/font_size = 30
+alignment = 1
+item_count = 3
+popup/item_0/text = "Attrition"
+popup/item_1/text = "Resistance"
+popup/item_1/id = 1
+popup/item_2/text = "Reroll"
+popup/item_2/id = 2
+
+[node name="CustomText" type="LineEdit" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("3_nspju")
+theme_override_fonts/font = SubResource("FontFile_klgpc")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Skill Here"
+alignment = 1
+
+[node name="TraitModifier" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource("16_7oaea")
+theme_override_fonts/font = SubResource("FontVariation_dx8da")
+theme_override_font_sizes/font_size = 30
+alignment = 1
+item_count = 2
+popup/item_0/text = "+"
+popup/item_1/text = "-"
+popup/item_1/id = 1
+
+[node name="TraitModifier2" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("16_7oaea")
+theme_override_fonts/font = SubResource("FontFile_4vqvj")
+theme_override_font_sizes/font_size = 30
+alignment = 1
+item_count = 4
+popup/item_0/text = "1"
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+
+[connection signal="item_selected" from="Size2/Size/Label/LevelSelect" to="." method="_on_level_select_item_selected"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_Atr_Button" to="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_Atr_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_Atr_Button" to="VBoxContainer2/HBoxContainer/Fortitude/Label/Fortitude_Atr_Button" method="_on_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_Atr_Button" to="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_Atr_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_Atr_Button" to="VBoxContainer2/HBoxContainer/Finesse/Label/Finesse_Atr_Button" method="_on_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer/Focus/Label/Focus_Atr_Button" to="VBoxContainer2/HBoxContainer/Focus/Label/Focus_Atr_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Focus/Label/Focus_Atr_Button" to="VBoxContainer2/HBoxContainer/Focus/Label/Focus_Atr_Button" method="_on_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer2/Fortitude/Label/Fortitude_Res_Button" to="VBoxContainer2/HBoxContainer2/Fortitude/Label/Fortitude_Res_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer2/Fortitude/Label/Fortitude_Res_Button" to="VBoxContainer2/HBoxContainer2/Fortitude/Label/Fortitude_Res_Button" method="_on_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer2/Finesse/Label/Finesse_Res_Button" to="VBoxContainer2/HBoxContainer2/Finesse/Label/Finesse_Res_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer2/Finesse/Label/Finesse_Res_Button" to="VBoxContainer2/HBoxContainer2/Finesse/Label/Finesse_Res_Button" method="_on_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer2/Focus/Label/Focus_Res_Button" to="VBoxContainer2/HBoxContainer2/Focus/Label/Focus_Res_Button" method="_on_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer2/Focus/Label/Focus_Res_Button" to="VBoxContainer2/HBoxContainer2/Focus/Label/Focus_Res_Button" method="_on_pressed"]
+[connection signal="item_selected" from="HBoxContainer/TraitType" to="." method="_on_trait_type_item_selected"]

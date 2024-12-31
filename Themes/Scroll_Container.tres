@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bgl40m17r12yq"]
+
+[ext_resource type="Texture2D" uid="uid://56gsdnn3557j" path="res://Assets/UI/panel_grey_bolts_blue.svg" id="1_2oinv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dieyh"]
+texture = ExtResource("1_2oinv")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_dieyh")

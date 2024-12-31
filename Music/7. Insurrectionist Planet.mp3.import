@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cygug4g1sbg3p"
+path="res://.godot/imported/7. Insurrectionist Planet.mp3-6e6792cefe3cdb6f7b2b8d9a3cd8bb5a.mp3str"
+
+[deps]
+
+source_file="res://Music/7. Insurrectionist Planet.mp3"
+dest_files=["res://.godot/imported/7. Insurrectionist Planet.mp3-6e6792cefe3cdb6f7b2b8d9a3cd8bb5a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,138 @@
+[gd_scene load_steps=13 format=3 uid="uid://buh1f2rygnv1q"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_bw5r3"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="2_kwxpr"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="3_581aw"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="4_gpe76"]
+[ext_resource type="Texture2D" uid="uid://bb5gtcxu4gdj6" path="res://Assets/UI/panel_grey_bolts_red.svg" id="6_lw1ci"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jasj4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rg8mg"]
+texture = ExtResource("4_gpe76")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_min3o"]
+texture = ExtResource("4_gpe76")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5whl7"]
+texture = ExtResource("4_gpe76")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1cmmi"]
+texture = ExtResource("6_lw1ci")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tnk1"]
+texture = ExtResource("6_lw1ci")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tct55"]
+texture = ExtResource("6_lw1ci")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="DeleteWarningWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(400, 200)
+theme = ExtResource("1_bw5r3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_jasj4")
+
+[node name="warning" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kwxpr")
+theme_override_font_sizes/font_size = 35
+text = "Attention!"
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -33.5
+offset_right = 131.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kwxpr")
+theme_override_font_sizes/font_size = 24
+text = "Are you sure you want to delete this character?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="No" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 170.0
+grow_vertical = 0
+theme = ExtResource("3_581aw")
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/hover = SubResource("StyleBoxTexture_rg8mg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_min3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5whl7")
+text = "Let Them Live"
+
+[node name="Yes" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_581aw")
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/hover = SubResource("StyleBoxTexture_1cmmi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3tnk1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tct55")
+text = "Let Them Perish"
+
+[connection signal="pressed" from="No" to="No" method="_on_pressed"]
+[connection signal="pressed" from="Yes" to="Yes" method="_on_pressed"]

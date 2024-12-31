@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqaocuk6m7nl1"]
+
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="1_i8web"]
+[ext_resource type="Script" path="res://Scripts/NextBackButtons/back_main_button.gd" id="2_q34ef"]
+
+[node name="BackButton" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -31.5
+offset_right = 41.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i8web")
+text = "Back"
+script = ExtResource("2_q34ef")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

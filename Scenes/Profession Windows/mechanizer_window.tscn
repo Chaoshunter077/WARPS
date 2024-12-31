@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=3 uid="uid://i8g3j43c62sc"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_iyrdw"]
+[ext_resource type="Script" path="res://Scripts/Profession Windows/mechanizer_window.gd" id="2_jrhi4"]
+[ext_resource type="Texture2D" uid="uid://dr8xspxsdo0pe" path="res://Assets/Art/DALL·E 2024-11-16 12.04.15 - A highly detailed black and white line art illustration of an Aethmir character resembling a serious, gnome-like figure in the foreground. The Aethmir.png" id="3_q540u"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="4_65yss"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_f8871"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_w5ajg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="MechanizerWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_iyrdw")
+script = ExtResource("2_jrhi4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(310, 760)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_q540u")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_65yss")
+theme_override_font_sizes/font_size = 50
+text = "Mechanizer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1440.0
+offset_right = 670.0
+offset_bottom = 1036.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Resource 
+A Mechanizer gathers the Mech Scrap from what is left of the Mechs from The Great Mecha Wars. Few know the craft, but those who do have created incredible machines.  
+
+Kit 
+A Mechanizer kit grants you a -1 to Mechanizer rolls. This kit allows you to repair Poor and Fine Mechs. A Mechanizer Kit will cost 200 gold. 
+This Kit is portable and can be used while on the road.  
+
+Lab 
+A Mechanizer Lab grants you a -2 to Mechanizer rolls and allows you to repair Superior Mechs in addition to Poor and Fine. A Mechanizer Lab will cost 2,000 gold to install in a room.
+
+Shop 
+A Mechanizer Workshop will allow you to repair Exquisite and Flawless Mechs in addition to Poor, Fine, and Superior. Your shop operates independently from you. A Mechanizer Workshop will cost 20,000 gold to establish. Roll a d4 on the Shop Success or Failure table based on your daily roll.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_f8871")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_w5ajg")
+text = "Select"
+
+[node name="Traits" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -865.0
+offset_right = 345.0
+offset_bottom = 1611.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_65yss")
+theme_override_font_sizes/font_size = 22
+text = "“After the Great Mecha Wars, most Mechanizers were hunted down and executed for their contribution to the uprising of the Mechs. Those few who pick up the profession do so in honor of the ones who’ve come before. Some out of sympathy for the innocents that were slaughtered, others determined to start a new era of Mech domination.”
+"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

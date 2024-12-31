@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8jxhwww2rajo"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_lrlcd"]
+[ext_resource type="LabelSettings" uid="uid://dkccc53avwhka" path="res://Themes/TextHeader.tres" id="2_l8061"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_n6kst"]
+[ext_resource type="Texture2D" uid="uid://cga511vedqubp" path="res://Assets/Art/DALL·E 2024-11-10 16.32.34 - A full-body profile of a human knight in science fantasy heavy armor as an agent of order, without a helmet and without an earpiece to reveal his huma.png" id="4_p40ma"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_kjb7j"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_bjup1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovogr"]
+font = ExtResource("3_n6kst")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Window" type="Window"]
+initial_position = 1
+size = Vector2i(800, 1000)
+content_scale_mode = 1
+theme = ExtResource("1_lrlcd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+text = "Alpha Genosian"
+label_settings = ExtResource("2_l8061")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 348.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_n6kst")
+theme_override_font_sizes/font_size = 20
+text = "Alpha Genosians were the most prominent of the Activated Genosians. They were the main infantry unit used during the war, with a focus on superhuman physical attributes and advanced mental processing. With enhanced reflexes, speed and strategic foresight, they could predict enemy movements and react faster than most mechs, making them superior in close combat and evasive maneuvers.
+
+Today Alpha Genosians are the heroes of their small villages, but only until the call of adventure lures them into the wilds of Zandaka Prime. Many feel their combat prowess requires them to slay great beasts, hunt down criminals, or compete in the Arenas for fame and fortune. They seek death only from a worthy opponent in battle and will rest at nothing to ensure they achieve it."
+label_settings = SubResource("LabelSettings_ovogr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -1050.0
+offset_right = 725.0
+offset_bottom = 1426.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_n6kst")
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels:
+	-	Fortitude: 9
+	-	Finesse: 9
+	-	Focus: 9
+Attribute Resistance Levels:
+	-	Fortitude: 3
+	-	Finesse: 3
+	-	Focus: 3
+Size: Medium
+Vigor: 23
+Skill Dice: 3
+
+
+Starting Traits
+	> +7 Vigor.
+	> 2 to Resistance Rolls.
+	> Three times per day, you may reroll any failed attribute roll.
+	> You and your Allies deal +2 Attrition when in Close Range of each other. (*Aura)
+
+*Targets cannot be affected by the same Aura more than once at a time.
+"
+label_settings = SubResource("LabelSettings_ovogr")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(500, 390)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_p40ma")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme = ExtResource("5_kjb7j")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -63.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_bjup1")
+text = "Select"

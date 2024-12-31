@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjmquaw41lklb"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_ugmn5"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/armatura_window.gd" id="2_dt1ge"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_idinj"]
+[ext_resource type="Texture2D" uid="uid://dlp5bwu830rbf" path="res://Assets/Art/DALL·E 2024-11-21 20.27.14 - A full-body depiction of a human-sized mech inspired by Warforged from D&D 5e, based on the bottom left design from the previous image, drawn in black.png" id="4_edegb"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_01egu"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_r663t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="ArmaturaWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_ugmn5")
+script = ExtResource("2_dt1ge")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_idinj")
+theme_override_font_sizes/font_size = 50
+text = "Mecha Armatura"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_right = -5.0
+offset_bottom = 762.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "In Post War Zandaka Prime, The Armatura have found meaning in the life of protecting settlements and escorting trade caravans. These walking tanks always seem to bring an air of security to those around them, and citizens are usually subconsciously drawn close to them when they make their way through towns.
+
+If they aren’t patrolling the streets, some might be found clashing in the Mecharena, where people place bets on who they think will bring one down. Most of the time, it’s just a gamble to see how long an Armatura can resist an onslaught of attackers before being destroyed. The participation of the Armatura is never voluntary, and always lethal… 
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -1035.0
+offset_right = 690.0
+offset_bottom = 1441.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels:
+- Fortitude: 10
+- Finesse: 8
+- Focus: 8
+Attribute Resistance Levels:
+- Fortitude: 4
+- Finesse: 4
+- Focus: 4
+Size: Medium
+Vigor: 23
+Skill Dice: 3
+
+
+
+Starting Traits
+> Twice per day, you may reroll a failed Fortitude Roll.
+> -1 to Resistance Rolls for you and allies within Close Range. (*Aura)
+> +3 Fortitude, Finesse, and Focus Resistance.
+> +7 Vigor.
+
+*Targets cannot be affected by the same Aura more than once at a time.
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(325, 365)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("4_edegb")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_01egu")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_r663t")
+text = "Select"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

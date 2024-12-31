@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbsei4vxtbcno"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_shtuf"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/crytoan_window.gd" id="2_plxum"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_btkwu"]
+[ext_resource type="Texture2D" uid="uid://ckd0epeigjbc1" path="res://Assets/Art/Crytoan.png" id="4_f80l7"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_1s7d6"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_4jdsc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="CrytoanWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_shtuf")
+script = ExtResource("2_plxum")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(300, 500)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("4_f80l7")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_btkwu")
+theme_override_font_sizes/font_size = 50
+text = "Crytoan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_right = -10.0
+offset_bottom = 503.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "The Aethereal fallout from the Aethmir facility detonations altered the genetics of some Petroans, fusing to their DNA, and changing their biological makeup. This new species had crystalline skin and a natural affinity to the Aether, now a permanent part of Zandaka Primes atmosphere. This affinity enabled them to absorb, channel, and release Aether in many unique ways. The innate craftsman within the Petroans carried on to the Crytoans, and many of their creations were infused with Aether.
+
+The Crytoans played a large role in the reconstruction of their capital city Petrapolis, imbuing the stone with Aether to illuminate the city naturally and giving it supernatural stability to prevent another catastrophe. Crytoans are prized craftsman of the surface as well, with their unique abilities beckoning even the most notorious figures of modern day Zandaka Prime to inquire of their services. 
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1155.0
+offset_right = 720.0
+offset_bottom = 1321.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels:
+- Fortitude: 11
+- Finesse: 8
+- Focus: 8
+Attribute Resistance Levels:
+- Fortitude: 6
+- Finesse: 0
+- Focus: 6
+Size: Medium
+Vigor: 23
+Skill Dice: 3
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_1s7d6")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_4jdsc")
+text = "Select"
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -715.0
+offset_right = 645.0
+offset_bottom = 1761.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Traits
+> Twice per day, you may reroll any failed roll.
+> You may use Fortitude for EMA's.
+> You have the Aether Armor EMA and may use it as many times as you would like.
+> +3 Energy.
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

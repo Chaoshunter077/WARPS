@@ -1,0 +1,211 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1ejtdgs8gxpt"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_lnblw"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/gamma_window.gd" id="2_h0i1d"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_5djib"]
+[ext_resource type="Texture2D" uid="uid://d0agucjpe275b" path="res://Assets/Art/DALL·E 2024-11-10 15.21.47 - A full-body profile of an orc in a post-apocalyptic wasteland setting, drawn in a grim dark style with heavy line art, similar to previous designs. Th.png" id="4_hupkr"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_rteyl"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="7_v4xg8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="GammaWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_lnblw")
+script = ExtResource("2_h0i1d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5djib")
+theme_override_font_sizes/font_size = 50
+text = "Gamma Virekai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 348.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Gamma Virekai are the larger variation of their species. What they lack in mystical abilities, they more than make up for in their feral ferocity. From birth they are given a taste for blood, and this blood denotes what their specialized prowess will be as they grow. Each Virekai Clan is different, worshipping not only a specific creature, but the biome it represents. Land, Sea, and Sky are the three major divisions among these Clans, under which there is unity even when worshipping different animals of that biome.
+
+Like all beings on Zandaka Prime, each individual is free to choose their path, the Gamma are no different. Gamma Virekai are a huge asset to any settlement brave enough to trust one. Their presence is usually enough to keep the most mischievous of folk out of town, and they are gladly recruited as guardians over smaller settlements. 
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1195.0
+offset_right = 720.0
+offset_bottom = 1281.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels: 
+- Fortitude: 10
+- Finesse: 10
+- Focus: 6
+Attribute Resistance Levels:
+- Fortitude: 6
+- Finesse: 6
+- Focus: 0
+Size: Large
+Vigor: 30
+Skill Dice: 4
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(-150, 800)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_hupkr")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme = ExtResource("5_rteyl")
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -614.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5djib")
+theme_override_font_sizes/font_size = 24
+text = "Starting Traits 
+Choose one of the following Biomes:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Land" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_v4xg8")
+theme_override_font_sizes/font_size = 30
+text = "Land"
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "> Twice per day, you may reroll a failed Fortitude Roll.
+> You may move up to Far for your Movement Action.
+> +4 Fortitude Attrition.
+> Resistance Rolls against Fire always succeed.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Sea" type="Button" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_v4xg8")
+theme_override_font_sizes/font_size = 30
+text = "Sea"
+
+[node name="Label3" type="Label" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "> Twice per day, you may reroll any failed Roll.
+> You may swim as part of your Movement Action.
+> +2 Fortitude and Finesse Attrition.
+> Resistance Rolls against Ice always succeed.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Air" type="Button" parent="VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_v4xg8")
+theme_override_font_sizes/font_size = 30
+text = "Air"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "> Twice per day, you may reroll a failed Finesse Roll.
+> You may leap as part of your Movement Action.
+> +4 Finesse Attrition.
+> Resistance Rolls against Lightning always succeed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Land" to="." method="_on_land_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Sea" to="." method="_on_sea_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer3/Air" to="." method="_on_air_pressed"]

@@ -1,0 +1,160 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3rqk42acuskh"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_5bg3m"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/felkin_window.gd" id="2_6aaae"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_skrh2"]
+[ext_resource type="Texture2D" uid="uid://p3is8wdb173g" path="res://Assets/Art/Felkin.png" id="4_n08yd"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_0np8j"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_b4eul"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="FelkinWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_5bg3m")
+script = ExtResource("2_6aaae")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_skrh2")
+theme_override_font_sizes/font_size = 50
+text = "Felkin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 348.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "The Felkin are a direct embodiment of what the Relkin are not. Self-centered and cruel, most people do their best to avoid coming into contact with these gremlins. Their mischievous lifestyle makes them a nuisance to the civilized world of Zandaka Prime, often sneaking into towns to unlatch animal pens, loosen caravan wheels, and dig small pits for early morning workers to fall into. All of this accompanied with their adept ability to steal and create illusions makes a Felkin infestation the bane of any town.
+
+With all of that said, these harmless endeavors are still highly favored over the more treacherous dealing of some Felkin tribes. Luckily these tribes tend to stick to less populated areas where their bloodshed and terror goes unchallenged. Although the Felkin are mostly wretched creatures, some find a knack for a more civilized life, and make a luxurious living selling their natural abilities for the right price. 
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1115.0
+offset_right = 720.0
+offset_bottom = 1361.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels:
+- Fortitude: 8
+- Finesse: 11
+- Focus: 9
+Attribute Resistance Levels:
+- Fortitude: 0
+- Finesse: 6
+- Focus: 6
+Size: Small
+Vigor: 15
+Skill Dice: 2
+
+
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(350, 420)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_n08yd")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_0np8j")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_b4eul")
+text = "Select"
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -715.0
+offset_right = 675.0
+offset_bottom = 1761.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Traits
+> Twice per day, you may reroll any failed roll.
+> You may use Finesse when using EMA’s.
+> You have the Aether Hand EMA and may use it as many times as you would like.
+> -2 to Resistance Rolls.
+
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

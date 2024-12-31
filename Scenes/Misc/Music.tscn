@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=3 uid="uid://sbo2v6huj2d8"]
+
+[ext_resource type="AudioStream" uid="uid://dmc142tjwqn0k" path="res://Music/1. Doomsday.mp3" id="1_8sco7"]
+[ext_resource type="AudioStream" uid="uid://c2knkpha5jryq" path="res://Music/2. Yellow Rain.mp3" id="2_g27op"]
+[ext_resource type="AudioStream" uid="uid://c6qtvxjn8ar18" path="res://Music/3. Suicide Mission.mp3" id="3_ht51p"]
+[ext_resource type="AudioStream" uid="uid://c3ju4w62wfmsc" path="res://Music/4. They Are Coming for Us.mp3" id="4_8ck7r"]
+[ext_resource type="AudioStream" uid="uid://baqc6efgwgdu1" path="res://Music/5. Orbital Conflict.mp3" id="5_1klqf"]
+[ext_resource type="AudioStream" uid="uid://d3wla2eo5g87e" path="res://Music/6. Polymorphic Hitmen.mp3" id="6_aagdy"]
+[ext_resource type="AudioStream" uid="uid://cygug4g1sbg3p" path="res://Music/7. Insurrectionist Planet.mp3" id="7_447dc"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_fqj7p"]
+shuffle = true
+stream_count = 7
+stream_0 = ExtResource("1_8sco7")
+stream_1 = ExtResource("2_g27op")
+stream_2 = ExtResource("3_ht51p")
+stream_3 = ExtResource("4_8ck7r")
+stream_4 = ExtResource("5_1klqf")
+stream_5 = ExtResource("6_aagdy")
+stream_6 = ExtResource("7_447dc")
+
+[node name="Node" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_fqj7p")
+volume_db = -17.802
+autoplay = true

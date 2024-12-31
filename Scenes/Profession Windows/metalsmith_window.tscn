@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcukvqdc3xsnw"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_x268l"]
+[ext_resource type="Script" path="res://Scripts/Profession Windows/metalsmith_window.gd" id="2_ab3nq"]
+[ext_resource type="Texture2D" uid="uid://c4lvh1k7hf582" path="res://Assets/Art/Picture1.png" id="3_ientd"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="4_7nsdp"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_lclf0"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_l4k16"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="MetalsmithWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_x268l")
+script = ExtResource("2_ab3nq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(300, 750)
+texture = ExtResource("3_ientd")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7nsdp")
+theme_override_font_sizes/font_size = 50
+text = "Metalsmith"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1440.0
+offset_right = 645.0
+offset_bottom = 1036.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Resource 
+A Metalsmith bends metal to their will, creating weapons, armor, and unique creations that benefit society as a whole. Metal can be found almost anywhere, but finding a Metalsmith has proven to be much more difficult since The Great Mecha Wars.
+
+Kit 
+A Metalsmith kit grants you a -1 to Metalsmithing rolls. You can create Poor and Fine equipment. A Metalsmith Kit will cost 200 gold.
+
+Lab 
+A Forge grants you a -2 to Metalsmithing rolls and allows you to create Superior equipment in addition to Poor and Fine. A Metalsmith Forge will cost 2,000 gold to install in a room. 
+ 
+Shop 
+A Metalsmith Shop will allow you to craft Exquisite and Flawless equipment in addition to Poor, Fine, and Superior. Your shop operates independently from you. A Metalsmith Shop will cost 20,000 gold to establish. Roll a d4 on the Shop Success or Failure table based on your daily roll. 
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_lclf0")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_l4k16")
+text = "Select"
+
+[node name="Traits" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -865.0
+offset_right = 335.0
+offset_bottom = 1611.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7nsdp")
+theme_override_font_sizes/font_size = 22
+text = "“Metalsmiths are the backbone of the world, creating anything and everything made of metal, from the Extraordinary to the mundane. The greatest Metalsmiths went into hiding after the Great Mecha Wars, ashamed of what the Mechanizers turned their creations into.”"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

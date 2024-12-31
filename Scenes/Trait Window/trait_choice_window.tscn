@@ -1,0 +1,142 @@
+[gd_scene load_steps=15 format=3 uid="uid://cegiyj1s1o7la"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_hcfoi"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="2_p2ypq"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/trait_choice_window.gd" id="2_ybbqd"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_bo187"]
+[ext_resource type="Theme" uid="uid://1ubsn0g5h2ry" path="res://Themes/traitchoices.tres" id="4_081ey"]
+[ext_resource type="Texture2D" uid="uid://bb5gtcxu4gdj6" path="res://Assets/UI/panel_grey_bolts_red.svg" id="4_cgduw"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="5_jpvl7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q6g53"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4e3fn"]
+texture = ExtResource("4_cgduw")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4qrum"]
+texture = ExtResource("4_cgduw")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sence"]
+texture = ExtResource("4_cgduw")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nv7x3"]
+texture = ExtResource("5_jpvl7")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57sdq"]
+texture = ExtResource("5_jpvl7")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_altbu"]
+texture = ExtResource("5_jpvl7")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="Trait Choice Window" type="Window"]
+initial_position = 1
+size = Vector2i(400, 400)
+theme = ExtResource("1_hcfoi")
+script = ExtResource("2_ybbqd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_q6g53")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bo187")
+theme_override_font_sizes/font_size = 40
+text = "Choose Wisely..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TraitOptions" type="OptionButton" parent="."]
+custom_minimum_size = Vector2(200, 80)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_081ey")
+theme_override_font_sizes/font_size = 30
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -78.0
+offset_right = 175.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Cancel" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_p2ypq")
+theme_override_colors/font_hover_color = Color(0.658824, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.658824, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_4e3fn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4qrum")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sence")
+text = "Cancel"
+
+[node name="Confirm" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_p2ypq")
+theme_override_colors/font_hover_color = Color(0.443137, 0.72549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.443137, 0.72549, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_nv7x3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_57sdq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_altbu")
+text = "Confirm"
+
+[connection signal="item_selected" from="TraitOptions" to="." method="_on_trait_options_item_selected"]
+[connection signal="pressed" from="TraitOptions" to="." method="_on_trait_options_pressed"]
+[connection signal="pressed" from="HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

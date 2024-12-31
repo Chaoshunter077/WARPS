@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bk4m6ypnvx64j"]
+
+[ext_resource type="Texture2D" uid="uid://56gsdnn3557j" path="res://Assets/UI/panel_grey_bolts_blue.svg" id="1_rnhov"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkee1"]
+texture = ExtResource("1_rnhov")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+LineEdit/font_sizes/font_size = 30
+LineEdit/styles/normal = SubResource("StyleBoxTexture_xkee1")

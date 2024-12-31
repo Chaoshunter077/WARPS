@@ -1,0 +1,291 @@
+[gd_scene load_steps=19 format=3 uid="uid://bge5ni5wscyyn"]
+
+[ext_resource type="Script" path="res://edit_equipment_gold_selection.gd" id="1_qvmaa"]
+[ext_resource type="Theme" uid="uid://5kthnogagsyv" path="res://Themes/Header.tres" id="2_0jtfw"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="4_7qljp"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="4_sekto"]
+[ext_resource type="Texture2D" uid="uid://bb5gtcxu4gdj6" path="res://Assets/UI/panel_grey_bolts_red.svg" id="6_prx58"]
+[ext_resource type="Theme" uid="uid://1ubsn0g5h2ry" path="res://Themes/traitchoices.tres" id="9_ceaaq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_exqpy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3jnl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qn7ov"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k2fj5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jp7bm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gebii"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qe47"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3l4mx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tcpi7"]
+texture = ExtResource("4_sekto")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2x4a"]
+texture = ExtResource("4_sekto")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_db2b4"]
+texture = ExtResource("6_prx58")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6k5rg"]
+texture = ExtResource("6_prx58")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="Edit Equipment Gold Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qvmaa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_exqpy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.0
+offset_right = 212.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme = ExtResource("2_0jtfw")
+theme_override_font_sizes/font_size = 40
+text = "Equipment: 0000 Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HiddenTrait" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -193.0
+offset_right = 193.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme = ExtResource("2_0jtfw")
+text = "Character Traits: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Categories" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -199.5
+offset_top = -104.0
+offset_right = 199.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Label2" type="Label" parent="Categories"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_0jtfw")
+theme_override_font_sizes/font_size = 30
+text = "Select Equipment Category"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Categories/Label2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -61.0
+offset_right = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("9_ceaaq")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_e3jnl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qn7ov")
+theme_override_styles/normal = SubResource("StyleBoxTexture_k2fj5")
+alignment = 1
+item_count = 5
+popup/item_0/text = "Fortitude"
+popup/item_1/text = "Finesse"
+popup/item_1/id = 1
+popup/item_2/text = "Focus"
+popup/item_2/id = 2
+popup/item_3/text = "Accessories"
+popup/item_3/id = 3
+popup/item_4/text = "Inventory"
+popup/item_4/id = 4
+
+[node name="Fortitude" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fortitude"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Finesse" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Finesse"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Focus" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Focus"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Accessories" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Accessories"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Inventory" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_right = 146.0
+offset_bottom = 91.0
+theme = ExtResource("2_0jtfw")
+theme_override_font_sizes/font_size = 20
+text = "Use Gold?"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="Label2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -38.0
+offset_right = 16.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jp7bm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gebii")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5qe47")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3l4mx")
+button_pressed = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -145.0
+offset_bottom = 91.0
+grow_horizontal = 0
+theme = ExtResource("4_7qljp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_tcpi7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r2x4a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_db2b4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6k5rg")
+text = "Return"
+
+[connection signal="toggled" from="Label2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

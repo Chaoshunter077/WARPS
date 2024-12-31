@@ -1,0 +1,546 @@
+[gd_scene load_steps=43 format=3 uid="uid://cldpysji0vu2g"]
+
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/NameBioform.gd" id="1_2pgiw"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="1_ut5rc"]
+[ext_resource type="Texture2D" uid="uid://56gsdnn3557j" path="res://Assets/UI/panel_grey_bolts_blue.svg" id="2_ia6w2"]
+[ext_resource type="Theme" uid="uid://5kthnogagsyv" path="res://Themes/Header.tres" id="3_huhhe"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="5_nrm1r"]
+[ext_resource type="Theme" uid="uid://cme1lk2bcajeu" path="res://Themes/Button.tres" id="6_6jyqc"]
+[ext_resource type="PackedScene" uid="uid://bcbn4qsjgo1jj" path="res://Scenes/Bioform Windows/AlphaGenWindow.tscn" id="6_ilmkp"]
+[ext_resource type="PackedScene" uid="uid://c1nsssrfrisdw" path="res://Scenes/Bioform Windows/dark_kosmari_window.tscn" id="7_dwtrh"]
+[ext_resource type="PackedScene" uid="uid://dqscnr3qhcy2t" path="res://Scenes/Bioform Windows/DeltaGenWindow.tscn" id="7_fl5i5"]
+[ext_resource type="PackedScene" uid="uid://cxcvixo113he6" path="res://Scenes/Misc/mute_button.tscn" id="7_fms62"]
+[ext_resource type="PackedScene" uid="uid://dxku5fushrljy" path="res://Scenes/Bioform Windows/zeta_gen_window.tscn" id="8_rorjr"]
+[ext_resource type="PackedScene" uid="uid://caq3aeasf4oeh" path="res://Scenes/Bioform Windows/kosmari_window.tscn" id="9_8tq04"]
+[ext_resource type="PackedScene" uid="uid://dcuwqr1puyrup" path="res://Scenes/Bioform Windows/aethmir_window.tscn" id="11_of7w1"]
+[ext_resource type="PackedScene" uid="uid://ebvv58mvv6" path="res://Scenes/Bioform Windows/light_aethmir_window.tscn" id="12_dp2cn"]
+[ext_resource type="PackedScene" uid="uid://btm75x1ewoty3" path="res://Scenes/Bioform Windows/petroan_window.tscn" id="13_nf8cu"]
+[ext_resource type="PackedScene" uid="uid://bbsei4vxtbcno" path="res://Scenes/Bioform Windows/crytoan_window.tscn" id="14_ywa3k"]
+[ext_resource type="PackedScene" uid="uid://eeh1n2garl3i" path="res://Scenes/Bioform Windows/relkin_window.tscn" id="15_ayuvv"]
+[ext_resource type="PackedScene" uid="uid://d3rqk42acuskh" path="res://Scenes/Bioform Windows/felkin_window.tscn" id="16_trqes"]
+[ext_resource type="PackedScene" uid="uid://c0xapryf7yaa4" path="res://Scenes/Bioform Windows/epsilon_window.tscn" id="17_wrtjo"]
+[ext_resource type="PackedScene" uid="uid://b1ejtdgs8gxpt" path="res://Scenes/Bioform Windows/gamma_window.tscn" id="18_7avqp"]
+[ext_resource type="PackedScene" uid="uid://bjmquaw41lklb" path="res://Scenes/Bioform Windows/armatura_window.tscn" id="19_06afw"]
+[ext_resource type="PackedScene" uid="uid://c30gkvxtio5nu" path="res://Scenes/Bioform Windows/imperium_window.tscn" id="20_uaidk"]
+[ext_resource type="PackedScene" uid="uid://dswr8orwxgk7b" path="res://Scenes/Bioform Windows/auxilium_window.tscn" id="21_6jdx3"]
+[ext_resource type="PackedScene" uid="uid://b5fvxsmwfbhug" path="res://Scenes/Misc/warning_window.tscn" id="22_tkk80"]
+[ext_resource type="Theme" uid="uid://3cpw440riifq" path="res://Themes/DropMenu2.tres" id="23_ay74u"]
+[ext_resource type="Theme" uid="uid://daxhnwdrbnfq7" path="res://Themes/Title.tres" id="23_iqjtp"]
+[ext_resource type="PackedScene" uid="uid://b5nyct6q5n3wi" path="res://Scenes/Bioform Windows/custom_bio_window.tscn" id="24_aa485"]
+[ext_resource type="PackedScene" uid="uid://bkjnrdy1ys8aj" path="res://Scenes/Misc/home_button.tscn" id="25_jgkgf"]
+[ext_resource type="PackedScene" uid="uid://d4a0r2vxasig7" path="res://Scenes/Misc/NextBackButtons/next_button.tscn" id="26_7bxkt"]
+[ext_resource type="PackedScene" uid="uid://bqaocuk6m7nl1" path="res://Scenes/Misc/NextBackButtons/back_button.tscn" id="27_qi7vu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3onfo"]
+texture = ExtResource("2_ia6w2")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_kxhfn"]
+LineEdit/font_sizes/font_size = 40
+LineEdit/fonts/font = ExtResource("1_ut5rc")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_3onfo")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbix7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjr2k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxs07"]
+texture = ExtResource("5_nrm1r")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4a54c"]
+texture = ExtResource("2_ia6w2")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rf43s"]
+texture = ExtResource("5_nrm1r")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_gs6n2"]
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.0901961, 0.662745, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.0901961, 0.662745, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 60
+Button/fonts/font = ExtResource("1_ut5rc")
+Button/styles/disabled = SubResource("StyleBoxFlat_hbix7")
+Button/styles/focus = SubResource("StyleBoxFlat_wjr2k")
+Button/styles/hover = SubResource("StyleBoxTexture_mxs07")
+Button/styles/normal = SubResource("StyleBoxTexture_4a54c")
+Button/styles/pressed = SubResource("StyleBoxTexture_rf43s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80l8q"]
+texture = ExtResource("5_nrm1r")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o4q7b"]
+texture = ExtResource("5_nrm1r")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0vxm"]
+texture = ExtResource("5_nrm1r")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_833wr"]
+texture = ExtResource("5_nrm1r")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="NameBioform" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2pgiw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.5
+offset_top = 64.0
+offset_right = 176.5
+offset_bottom = 155.0
+grow_horizontal = 2
+theme = SubResource("Theme_kxhfn")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Character Name"
+alignment = 1
+expand_to_text_length = true
+clear_button_enabled = true
+
+[node name="Bioform" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -315.0
+offset_right = 300.0
+offset_bottom = -212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_huhhe")
+theme_override_font_sizes/font_size = 38
+text = "Bioform: Not Chosen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -197.0
+offset_right = 248.0
+offset_bottom = 537.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="AlphaGenButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Alpha Genosian"
+
+[node name="DeltaGenButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Delta Genosian"
+
+[node name="ZetaGenButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Zeta Genosian"
+
+[node name="KosmariButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Kosmari"
+
+[node name="DarkKosmariButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Dark Kosmari"
+
+[node name="AethmirButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Aethmir"
+
+[node name="LightAethmirButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Light Aethmir"
+
+[node name="PetroanButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Petroan"
+
+[node name="CrytoanButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Crytoan"
+
+[node name="RelkinButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Relkin"
+
+[node name="FelkinButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Felkin"
+
+[node name="EpsilonVirekaiButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Epsilon Virekai"
+
+[node name="GammaVirekaiButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Gamma Virekai"
+
+[node name="MechaArmaturaButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Mecha Armatura"
+
+[node name="MechaImperiumButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Mecha Imperium"
+
+[node name="MechaAuxiliumButton" type="Button" parent="VBoxContainer/GridContainer" groups=["Button"]]
+layout_mode = 2
+theme = SubResource("Theme_gs6n2")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80l8q")
+text = "Mecha Auxilium"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_6jyqc")
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "Custom Bioform"
+
+[node name="DeltaGenWindow" parent="." instance=ExtResource("7_fl5i5")]
+visible = false
+
+[node name="DarkKosmariWindow" parent="." instance=ExtResource("7_dwtrh")]
+visible = false
+
+[node name="AlphaGenWindow" parent="." instance=ExtResource("6_ilmkp")]
+visible = false
+
+[node name="ZetaGenWindow" parent="." instance=ExtResource("8_rorjr")]
+visible = false
+
+[node name="KosmariWindow" parent="." instance=ExtResource("9_8tq04")]
+visible = false
+
+[node name="AethmirWindow" parent="." instance=ExtResource("11_of7w1")]
+visible = false
+
+[node name="LightAethmirWindow" parent="." instance=ExtResource("12_dp2cn")]
+visible = false
+
+[node name="PetroanWindow" parent="." instance=ExtResource("13_nf8cu")]
+visible = false
+
+[node name="CrytoanWindow" parent="." instance=ExtResource("14_ywa3k")]
+visible = false
+
+[node name="RelkinWindow" parent="." instance=ExtResource("15_ayuvv")]
+visible = false
+
+[node name="FelkinWindow" parent="." instance=ExtResource("16_trqes")]
+visible = false
+
+[node name="EpsilonWindow" parent="." instance=ExtResource("17_wrtjo")]
+visible = false
+
+[node name="GammaWindow" parent="." instance=ExtResource("18_7avqp")]
+visible = false
+
+[node name="ArmaturaWindow" parent="." instance=ExtResource("19_06afw")]
+visible = false
+
+[node name="ImperiumWindow" parent="." instance=ExtResource("20_uaidk")]
+visible = false
+
+[node name="AuxiliumWindow" parent="." instance=ExtResource("21_6jdx3")]
+visible = false
+
+[node name="WarningWindow" parent="." instance=ExtResource("22_tkk80")]
+visible = false
+
+[node name="CustomBioWindow" parent="." instance=ExtResource("24_aa485")]
+visible = false
+
+[node name="Level" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_top = 192.0
+offset_right = 113.0
+offset_bottom = 295.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Level"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("23_iqjtp")
+theme_override_fonts/font = ExtResource("1_ut5rc")
+theme_override_font_sizes/font_size = 50
+text = "Level:"
+
+[node name="LevelSelect" type="OptionButton" parent="Level/Label"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = 21.0
+offset_right = -6.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("23_ay74u")
+alignment = 1
+item_count = 10
+popup/item_0/text = "1"
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+popup/item_4/text = "5"
+popup/item_4/id = 4
+popup/item_5/text = "6"
+popup/item_5/id = 5
+popup/item_6/text = "7"
+popup/item_6/id = 6
+popup/item_7/text = "8"
+popup/item_7/id = 7
+popup/item_8/text = "9"
+popup/item_8/id = 8
+popup/item_9/text = "10"
+popup/item_9/id = 9
+
+[node name="Home" parent="." instance=ExtResource("25_jgkgf")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -103.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 103.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="BackButton" parent="." instance=ExtResource("27_qi7vu")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -78.0
+offset_right = 110.0
+offset_bottom = 2.0
+grow_horizontal = 1
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ut5rc")
+theme_override_font_sizes/font_size = 50
+
+[node name="NextButton" parent="." instance=ExtResource("26_7bxkt")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -80.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_o4q7b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e0vxm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_833wr")
+
+[node name="MuteButton" parent="." instance=ExtResource("7_fms62")]
+layout_mode = 1
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 103.0
+grow_vertical = 1
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/AlphaGenButton" to="." method="_on_alpha_gen_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/DeltaGenButton" to="." method="_on_delta_gen_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/ZetaGenButton" to="." method="_on_zeta_gen_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/KosmariButton" to="." method="_on_kosmari_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/DarkKosmariButton" to="." method="_on_dark_kosmari_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/AethmirButton" to="." method="_on_aethmir_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/LightAethmirButton" to="." method="_on_light_aethmir_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/PetroanButton" to="." method="_on_petroan_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/CrytoanButton" to="." method="_on_crytoan_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/RelkinButton" to="." method="_on_relkin_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/FelkinButton" to="." method="_on_felkin_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/EpsilonVirekaiButton" to="." method="_on_epsilon_virekai_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/GammaVirekaiButton" to="." method="_on_gamma_virekai_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/MechaArmaturaButton" to="." method="_on_mecha_armatura_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/MechaImperiumButton" to="." method="_on_mecha_imperium_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/MechaAuxiliumButton" to="." method="_on_mecha_auxilium_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="close_requested" from="DeltaGenWindow" to="." method="_on_delta_gen_window_close_requested"]
+[connection signal="close_requested" from="DarkKosmariWindow" to="DarkKosmariWindow" method="_on_close_requested"]
+[connection signal="close_requested" from="AlphaGenWindow" to="." method="_on_alpha_gen_window_close_requested"]
+[connection signal="item_selected" from="Level/Label/LevelSelect" to="." method="_on_option_button_item_selected"]

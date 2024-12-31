@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://u5ygm20uahdb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anodb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie7il"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f78mw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5dln"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s11th"]
+
+[resource]
+OptionButton/constants/v_separation = 15
+OptionButton/font_sizes/font_size = 72
+OptionButton/styles/focus = SubResource("StyleBoxTexture_anodb")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_ie7il")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxTexture_f78mw")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_s5dln")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_s11th")

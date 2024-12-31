@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://buynfywaa3567"]
+
+[ext_resource type="Texture2D" uid="uid://bb5gtcxu4gdj6" path="res://Assets/UI/panel_grey_bolts_red.svg" id="1_w5keo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62b0a"]
+texture = ExtResource("1_w5keo")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwixn"]
+texture = ExtResource("1_w5keo")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkhr1"]
+texture = ExtResource("1_w5keo")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_62b0a")
+Button/styles/normal = SubResource("StyleBoxTexture_vwixn")
+Button/styles/pressed = SubResource("StyleBoxTexture_jkhr1")

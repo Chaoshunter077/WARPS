@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=3 uid="uid://ebvv58mvv6"]
+
+[ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_4i454"]
+[ext_resource type="Script" path="res://Scripts/Bioform Windows/light_aethmir_window.gd" id="2_mabwg"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_ujwtt"]
+[ext_resource type="Texture2D" uid="uid://cbr2lvigcdfrd" path="res://Assets/Art/cosmic scales.png" id="4_ecg1i"]
+[ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_clgxa"]
+[ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_dfeum"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0q47"]
+
+[node name="LightAethmirWindow" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(680, 1230)
+content_scale_mode = 1
+theme = ExtResource("1_4i454")
+script = ExtResource("2_mabwg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j0q47")
+expand_mode = 4
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -20.0
+offset_right = 187.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ujwtt")
+theme_override_font_sizes/font_size = 50
+text = "Light Aethmir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 348.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Light Aethmir came about sometime during the end of The Great Mecha Wars. After centuries of fighting with the Kosmari, the Aethmir pushed the Crystals of Artorix to their limits, powering their mechs and eventually directly connecting the Heart of Artorix to the Mecha Hivemind. Some Aethmir saw the danger to their own race and decided to join the Kosmari in the efforts to end the war.
+
+Turning their backs on Artorix came at a cost, they no had the capability to regenerate after death. The Curse of Artorix hindered the Light Aethmir, but turning to the side of Order had its benefits as well. Harnessing the power of Lexious, these rebels were given new gifts to fight for what they believed in. 
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Stats" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -1265.0
+offset_right = 720.0
+offset_bottom = 1211.0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Stats
+Attribute Levels: 
+- Fortitude: 7
+- Finesse: 10
+- Focus: 11
+Attribute Resistance Levels:
+- Fortitude: 0
+- Finesse: 0
+- Focus: 6
+Size: Small
+Vigor: 15
+Skill Dice: 2
+
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(25, 750)
+texture = ExtResource("4_ecg1i")
+centered = false
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme = ExtResource("5_clgxa")
+text = "Back"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -63.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_dfeum")
+text = "Select"
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -565.0
+offset_bottom = 447.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Starting Traits
+> Twice per day, you may reroll any failed roll.
+> +2 to all d20 rolls.
+> +1 SD
+> On a Critical Success or Failure, roll on the Cosmic Scales chart. 
+
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

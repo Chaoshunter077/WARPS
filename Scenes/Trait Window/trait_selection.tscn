@@ -1,0 +1,2844 @@
+[gd_scene load_steps=32 format=3 uid="uid://bueafycjuuc5g"]
+
+[ext_resource type="Script" path="res://Scripts/Trait Windows/trait_selection.gd" id="1_0mvv0"]
+[ext_resource type="Theme" uid="uid://5kthnogagsyv" path="res://Themes/Header.tres" id="1_34g07"]
+[ext_resource type="Theme" uid="uid://bgl40m17r12yq" path="res://Themes/Scroll_Container.tres" id="3_2osu4"]
+[ext_resource type="PackedScene" uid="uid://cegiyj1s1o7la" path="res://Scenes/Trait Window/trait_choice_window.tscn" id="3_g0e2m"]
+[ext_resource type="PackedScene" uid="uid://bx653ku8xw0rp" path="res://Scenes/Trait Window/trait_button.tscn" id="4_0ra5t"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/we_count.gd" id="5_d12w3"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/elem_count.gd" id="5_e13ct"]
+[ext_resource type="PackedScene" uid="uid://d4a0r2vxasig7" path="res://Scenes/Misc/NextBackButtons/next_button.tscn" id="5_lj18o"]
+[ext_resource type="PackedScene" uid="uid://bqaocuk6m7nl1" path="res://Scenes/Misc/NextBackButtons/back_button.tscn" id="6_6mk3i"]
+[ext_resource type="Script" path="res://Scenes/Misc/NextBackButtons/next_button_abilities.gd" id="6_i0qlw"]
+[ext_resource type="PackedScene" uid="uid://dmc1dyw3v55ge" path="res://Scenes/Trait Window/multi_choice_prompt_window.tscn" id="6_nqo2q"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/gam_count.gd" id="6_s7x0e"]
+[ext_resource type="PackedScene" uid="uid://83tip381rvsb" path="res://Scenes/Trait Window/trait_choice_remove_window.tscn" id="7_2b7oo"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="7_jmhby"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/mart_count.gd" id="7_jmivo"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/natres_count.gd" id="8_2sirc"]
+[ext_resource type="Script" path="res://Scenes/Misc/NextBackButtons/back_button_professions.gd" id="8_w040i"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/prod_count.gd" id="9_sh4o2"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/prof_count.gd" id="10_rnbd7"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/reck_count.gd" id="11_a8bbi"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/spec_count.gd" id="12_rt3cs"]
+[ext_resource type="Script" path="res://Scripts/Trait Windows/vet_count.gd" id="13_rv6v4"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="16_3xdkc"]
+[ext_resource type="PackedScene" uid="uid://c1imawdl3th5h" path="res://Scenes/Misc/trait_warning_window.tscn" id="24_b0826"]
+[ext_resource type="PackedScene" uid="uid://cxcvixo113he6" path="res://Scenes/Misc/mute_button.tscn" id="25_ihaer"]
+[ext_resource type="PackedScene" uid="uid://bkjnrdy1ys8aj" path="res://Scenes/Misc/home_button.tscn" id="26_86l6k"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k21kx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4im7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpbyn"]
+texture = ExtResource("16_3xdkc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkgb3"]
+texture = ExtResource("16_3xdkc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0yol6"]
+texture = ExtResource("16_3xdkc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="TraitSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0mvv0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_k21kx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -193.0
+offset_right = 193.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme = ExtResource("1_34g07")
+theme_override_font_sizes/font_size = 60
+text = "Character Traits: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HiddenTrait" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -193.0
+offset_right = 193.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme = ExtResource("1_34g07")
+text = "Character Traits: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -357.0
+offset_top = 136.0
+offset_right = 364.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x4im7")
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+columns = 2
+
+[node name="Ability Expert" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Ability Expert"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Ability Expert/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Ability Expert"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Ability Expert/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose ST+1 Abilities you know. 
+You may use those Abilities as many times as you would like."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Ability Expert" parent="ScrollContainer/GridContainer/Ability Expert/Panel" instance=ExtResource("4_0ra5t")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="All or Nothing" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/All or Nothing"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/All or Nothing/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "All or Nothing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/All or Nothing/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You now Critically Hit on a natural 1, 2, or 3 but Critically Fail on an 18, 19, or 20."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/All or Nothing/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Ambidextrous" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Ambidextrous"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Ambidextrous/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Ambidextrous"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Ambidextrous/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may wield Main-hand equipment in your Off-hand and vice versa.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Ambidextrous/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Aquatic" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Aquatic"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Aquatic/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Aquatic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Aquatic/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may now Swim as part of your Movement Action.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Aquatic/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Beast Whisperer" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Beast Whisperer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Beast Whisperer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Beast Whisperer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Beast Whisperer/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You can subtly influence the behavior of an animal that is not hostile towards you.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Beast Whisperer/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Braveheart" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Braveheart"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Braveheart/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Braveheart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Braveheart/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You are immune to being Frightened."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Braveheart/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Breathless" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Breathless"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Breathless/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Breathless"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Breathless/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You no longer need to breathe and are immune to inhaled toxins.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Breathless/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Charger" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Charger"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Charger/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Charger"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Charger/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Far Movement no longer consumes your Standard Action."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Charger/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Climber" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Climber"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Climber/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Climber"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Climber/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may now Climb as part of your Movement Action."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Climber/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Combo Fiend" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Combo Fiend"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Combo Fiend/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Combo Fiend"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Combo Fiend/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "ST+1 times per combat on a successful hit you may attempt to use an ability, but the Energy cost is doubled."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Combo Fiend/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Craftsman" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Craftsman"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Craftsman/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Craftsman"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Craftsman/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may craft items from any Profession but you do so with a 10 - (ST+1) modifier."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Craftsman/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Diviner" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Diviner"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Diviner/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Diviner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Diviner/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "At the start of each day you may roll ST d20's and record the numbers. You may use each of these numbers once to replace any roll for that day."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Diviner/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Double Tap" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Double Tap"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Double Tap/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Double Tap"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Double Tap/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "If an enemy fails to Resist your first basic attack, you may take another attack action."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Double Tap/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="+Elemental Specialist" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Elemental Specialist"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Elemental Specialist/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Elemental Specialist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Elemental Specialist/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an element.
+Deal ST+1 Attrition with that element."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Elemental Specialist/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="ElemCount" type="Label" parent="ScrollContainer/GridContainer/+Elemental Specialist/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_e13ct")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Elemental Specialist/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy Conduit" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Energy Conduit"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Energy Conduit/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Energy Conduit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Energy Conduit/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "For each Energy that you spend, you may roll a d20. Roll ST or under to retain that Energy."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Energy Conduit/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="+Gambler" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Gambler"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Gambler/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Gambler"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Gambler/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Attribute.
+You may reroll the SD from that Attribute ST+1 times per day."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Gambler/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="GamCount" type="Label" parent="ScrollContainer/GridContainer/+Gambler/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_s7x0e")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Gambler/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Harbinger" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Harbinger"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Harbinger/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Harbinger"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Harbinger/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You and all allies remove ST+1 from their first roll made in combat."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Harbinger/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Insomniac" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Insomniac"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Insomniac/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Insomniac"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Insomniac/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You are immune to being put to Sleep and no longer need to sleep to benefit from a Full Rest given you don't engage in any strenuous activities for the duration. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Insomniac/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Invigorated" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Invigorated"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Invigorated/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Invigorated"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Invigorated/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Gain (ST+1)x2 Vigor to your maximum Vigor but remove ST from your Energy."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Invigorated/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Juggernaut" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Juggernaut"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Juggernaut/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Juggernaut"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Juggernaut/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "The first time you reach Max Attrition in Combat you may spend 1 Energy to resist falling unconscious."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Juggernaut/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="MacGyver" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/MacGyver"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/MacGyver/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "MacGyver"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/MacGyver/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "ST+1 times per day you may create a simple tool or item out of the mundane scrap around you without a roll. This excludes equipment."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/MacGyver/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="+Martial Artist" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Martial Artist"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Martial Artist/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Martial Artist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Martial Artist/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Off-hand equipment type or Hands and Feet.
+Your choice is now considered a Fortitude weapon with an ST+1 Attrition modifier."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Martial Artist/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="martCount" type="Label" parent="ScrollContainer/GridContainer/+Martial Artist/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_jmivo")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Martial Artist/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Medic" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Medic"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Medic/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Medic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Medic/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may Stabalize ST targets per day without a roll."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Medic/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Monk" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Monk"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Monk/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Monk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Monk/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Your meditation dice is replaced with (ST+1)x2 d4 and you may meditate as long as you have dice in your pool."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Monk/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="+Natural Resistance" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Natural Resistance"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Natural Resistance/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Natural Resistance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Natural Resistance/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Attribute.
+Gain (ST+1)x2 resistance to that Attribute.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Natural Resistance/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="natresCount" type="Label" parent="ScrollContainer/GridContainer/+Natural Resistance/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_2sirc")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Natural Resistance/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pathfinder" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Pathfinder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Pathfinder/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Pathfinder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Pathfinder/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You can never lose your way by natural means."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Pathfinder/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Poised" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Poised"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Poised/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Poised"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Poised/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Prevent enemies from getting a Free Attack on you when you Critically Fail."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Poised/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="+Prodigy" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Prodigy"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Prodigy/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Prodigy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Prodigy/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Attribute.
+Remove ST+1 from Ability rolls made with that Attribute."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Prodigy/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="prodCount" type="Label" parent="ScrollContainer/GridContainer/+Prodigy/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_sh4o2")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Prodigy/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="+Professional" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Professional"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Professional/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Professional"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Professional/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose or create any Skill.
+Remove ST+1 to rolls based on that Skill. Gamemaster must approve of any created skill."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Professional/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="profCount" type="Label" parent="ScrollContainer/GridContainer/+Professional/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_rnbd7")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Professional/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="+Reckless" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Reckless"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Reckless/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Reckless"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Reckless/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Attribute. 
+Add a Skill Dice to that Attribute but lose (ST+1)x2 to that Attributes Resistance."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Reckless/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="reckCount" type="Label" parent="ScrollContainer/GridContainer/+Reckless/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_a8bbi")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Reckless/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resilient" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Resilient"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Resilient/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Resilient"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Resilient/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You are immune to being poisoned."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Resilient/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Resourceful" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Resourceful"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Resourceful/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Resourceful"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Resourceful/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may attempt to establish a resourceful contact within a populated area. Roll a d12+ST. 
+8 or higher =  a resourceful ally. 
+5 or lower = a powerful enemy."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Resourceful/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Rogue" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Rogue"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Rogue/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Rogue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Rogue/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may use Finesse when attacking with One-handed Fortitude weapons."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Rogue/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Sentry" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Sentry"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Sentry/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Sentry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Sentry/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You see in darkness as though it is dimly lit."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Sentry/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="+Specialist" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Specialist"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Specialist/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Specialist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Specialist/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Attribute.
+All abilities with that Attribute inflict ST+1 additional Attrition."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Specialist/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="specCount" type="Label" parent="ScrollContainer/GridContainer/+Specialist/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("12_rt3cs")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Specialist/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stalwart" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Stalwart"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Stalwart/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Stalwart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Stalwart/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "When an ally within Close Range is attacked, you may subtract ST from their Resistance Roll."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Stalwart/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Stoic" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Stoic"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Stoic/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Stoic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Stoic/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You are immune to Lose a Grip."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Stoic/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Supercharged" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Supercharged"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Supercharged/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Supercharged"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Supercharged/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Your base Energy is now (ST+1)x2 but you have ST permanent Wounds."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Supercharged/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Telepath" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Telepath"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Telepath/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Telepath"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Telepath/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "At the start of each day you may establish a telepathic link with ST targets."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Telepath/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Tradesman" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Tradesman"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Tradesman/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Tradesman"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Tradesman/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You may succesfully craft up to ST+1 times per day."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Tradesman/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="Unyielding" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Unyielding"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Unyielding/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Unyielding"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Unyielding/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Remove ST from your Resistance Rolls."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Unyielding/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="+Veteran" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Veteran"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Veteran/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Veteran"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Veteran/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Attribute type.
+Remove ST+1 to attack rolls made with that Attribute."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Veteran/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="VetCount" type="Label" parent="ScrollContainer/GridContainer/+Veteran/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_rv6v4")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Veteran/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="+Weapon Expert" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/+Weapon Expert"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/+Weapon Expert/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Weapon Expert"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/+Weapon Expert/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Choose an Attribute type.
+All weapons with that Attribute inflict ST+1 additional Attrition.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/+Weapon Expert/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="WECount" type="Label" parent="ScrollContainer/GridContainer/+Weapon Expert/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 13.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_d12w3")
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/+Weapon Expert/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 56.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wild Card" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/Wild Card"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("3_2osu4")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Wild Card/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Wild Card"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Wild Card/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -119.5
+offset_right = -8.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Gain 1d4 abilities each ST increase. You may only use each ability once per day."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/GridContainer/Wild Card/Panel" instance=ExtResource("4_0ra5t")]
+layout_mode = 1
+offset_top = -58.0
+offset_bottom = -10.0
+
+[node name="NextButton" parent="." instance=ExtResource("5_lj18o")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -80.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_jpbyn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pkgb3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0yol6")
+script = ExtResource("6_i0qlw")
+
+[node name="BackButton" parent="." instance=ExtResource("6_6mk3i")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -80.0
+offset_right = 110.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_jmhby")
+theme_override_font_sizes/font_size = 50
+script = ExtResource("8_w040i")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Trait Window" parent="." instance=ExtResource("3_g0e2m")]
+visible = false
+
+[node name="Multi Choice Prompt Window" parent="." instance=ExtResource("6_nqo2q")]
+visible = false
+
+[node name="Trait Remove Window" parent="." instance=ExtResource("7_2b7oo")]
+visible = false
+
+[node name="TraitWarningWindow" parent="." instance=ExtResource("24_b0826")]
+visible = false
+
+[node name="MuteButton" parent="." instance=ExtResource("25_ihaer")]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 103.0
+grow_vertical = 1
+
+[node name="Home" parent="." instance=ExtResource("26_86l6k")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -103.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 103.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[connection signal="visibility_changed" from="Trait Window" to="ScrollContainer/GridContainer/Ability Expert/Panel/Ability Expert" method="_on_trait_choice_window_visibility_changed"]
+[connection signal="visibility_changed" from="Trait Window" to="Trait Window" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Multi Choice Prompt Window" to="ScrollContainer/GridContainer/Ability Expert/Panel/Ability Expert" method="_on_multi_choice_prompt_window_visibility_changed"]
+[connection signal="visibility_changed" from="Multi Choice Prompt Window" to="Multi Choice Prompt Window" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Trait Remove Window" to="ScrollContainer/GridContainer/Ability Expert/Panel/Ability Expert" method="_on_trait_remove_window_visibility_changed"]
+[connection signal="visibility_changed" from="Trait Remove Window" to="Trait Remove Window" method="_on_visibility_changed"]

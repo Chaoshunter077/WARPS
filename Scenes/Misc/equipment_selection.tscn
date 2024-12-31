@@ -1,0 +1,296 @@
+[gd_scene load_steps=19 format=3 uid="uid://dgnffe8m4tpa5"]
+
+[ext_resource type="Theme" uid="uid://5kthnogagsyv" path="res://Themes/Header.tres" id="1_g5c0d"]
+[ext_resource type="Script" path="res://Scenes/Misc/equipment_selection.gd" id="1_jhqrg"]
+[ext_resource type="PackedScene" uid="uid://d4a0r2vxasig7" path="res://Scenes/Misc/NextBackButtons/next_button.tscn" id="2_oyd6y"]
+[ext_resource type="Texture2D" uid="uid://bjs5iheoq0yp2" path="res://Assets/UI/panel_grey_bolts_green.svg" id="3_6hwjc"]
+[ext_resource type="PackedScene" uid="uid://bqaocuk6m7nl1" path="res://Scenes/Misc/NextBackButtons/back_button.tscn" id="4_m017a"]
+[ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="5_fgxyk"]
+[ext_resource type="Script" path="res://Scenes/Misc/NextBackButtons/next_button_characterSheet.gd" id="5_uxhis"]
+[ext_resource type="Script" path="res://Scenes/Misc/NextBackButtons/back_button_abilities.gd" id="6_xl47e"]
+[ext_resource type="Theme" uid="uid://1ubsn0g5h2ry" path="res://Themes/traitchoices.tres" id="7_0wsr7"]
+[ext_resource type="PackedScene" uid="uid://cxcvixo113he6" path="res://Scenes/Misc/mute_button.tscn" id="8_8ehx5"]
+[ext_resource type="PackedScene" uid="uid://bkjnrdy1ys8aj" path="res://Scenes/Misc/home_button.tscn" id="9_3176q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k21kx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djkui"]
+texture = ExtResource("3_6hwjc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjm6q"]
+texture = ExtResource("3_6hwjc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uw5im"]
+texture = ExtResource("3_6hwjc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jo1c1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bjjs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5ena"]
+
+[node name="Equipment Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jhqrg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_k21kx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.0
+offset_right = 212.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme = ExtResource("1_g5c0d")
+theme_override_font_sizes/font_size = 40
+text = "Equipment: 0000 Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HiddenTrait" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -193.0
+offset_right = 193.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme = ExtResource("1_g5c0d")
+text = "Character Traits: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextButton" parent="." instance=ExtResource("2_oyd6y")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -80.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_djkui")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xjm6q")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uw5im")
+script = ExtResource("5_uxhis")
+
+[node name="BackButton" parent="." instance=ExtResource("4_m017a")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -80.0
+offset_right = 110.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_fgxyk")
+theme_override_font_sizes/font_size = 50
+script = ExtResource("6_xl47e")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Categories" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -199.5
+offset_top = -104.0
+offset_right = 199.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Label2" type="Label" parent="Categories"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_g5c0d")
+theme_override_font_sizes/font_size = 30
+text = "Select Equipment Category"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Categories/Label2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -61.0
+offset_right = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("7_0wsr7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_jo1c1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1bjjs")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c5ena")
+alignment = 1
+item_count = 5
+popup/item_0/text = "Fortitude"
+popup/item_1/text = "Finesse"
+popup/item_1/id = 1
+popup/item_2/text = "Focus"
+popup/item_2/id = 2
+popup/item_3/text = "Accessories"
+popup/item_3/id = 3
+popup/item_4/text = "Inventory"
+popup/item_4/id = 4
+
+[node name="MuteButton" parent="." instance=ExtResource("8_8ehx5")]
+layout_mode = 1
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 103.0
+grow_vertical = 1
+
+[node name="Home" parent="." instance=ExtResource("9_3176q")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -125.0
+offset_top = 0.0
+offset_right = -22.0
+offset_bottom = 103.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="Fortitude" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fortitude"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Finesse" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Finesse"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Focus" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Focus"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Accessories" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Accessories"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Inventory" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
