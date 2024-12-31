@@ -32,11 +32,18 @@ jobs:
     - name: Create build directory
       run: mkdir -p build
 
-    - name: Reimport Resources in Godot
-      run: godot --headless --reimport
+    - name: Reimport Resources in Godot (with verbose output)
+      run: godot --headless --reimport -v
 
-    - name: Open Godot Project to Trigger Import
-      run: godot --headless --export "iOS" build/your_project_name.xcodeproj
+    - name: Check if resources are present
+      run: |
+        echo "Checking resource paths..."
+        ls -l res://Music/
+        ls -l res://Assets/UI/
+        ls -l res://Assets/Art/
+
+    - name: Open Godot Project to Trigger Import (with verbose output)
+      run: godot --headless --export "iOS" build/your_project_name.xcodeproj -v
 
     - name: Export iOS project
       run: godot --headless --export-release "iOS" build/your_project_name.xcodeproj
