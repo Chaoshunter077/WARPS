@@ -1,3 +1,16 @@
-# Godot 4+ specific ignores
+# Godot folders
 .godot/
-/android/
+# Ignore export templates (they can be downloaded again)
+export_templates/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore build and temporary files
+*.log
+*.tmp
+*.swp
+
+# Ignore user-specific config files
+*.import
