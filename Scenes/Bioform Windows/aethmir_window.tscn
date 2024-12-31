@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_egvdy"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/aethmir_window.gd" id="2_2m20f"]
+[ext_resource type="Texture2D" uid="uid://5q3bm3b2vnxh" path="res://Assets/Art/Aethmir3.jpg" id="3_0tpji"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_8q40t"]
-[ext_resource type="Texture2D" uid="uid://cbm4o1ccau48f" path="res://Assets/Art/DALL·E 2024-11-10 15.29.41 - A full-body profile of a gnome in a grim dark fantasy style with heavy line art, shown from head to toe. The gnome has a rugged, muscular build with a.jpg" id="4_xn052"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_37f41"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_ntfeo"]
 
@@ -29,7 +29,7 @@ expand_mode = 4
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(380, 400)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xn052")
+texture = ExtResource("3_0tpji")
 centered = false
 
 [node name="Title" type="Label" parent="."]

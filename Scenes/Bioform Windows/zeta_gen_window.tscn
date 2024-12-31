@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_yerhp"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/zeta_gen_window.gd" id="2_icn6v"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_cj7y2"]
-[ext_resource type="Texture2D" uid="uid://deh7y2kp1osy7" path="res://Assets/Art/DALL·E 2024-11-18 14.25.32 - A black and white line art sketch of an Epsilon Gene Genosian, blending the appearance of a super soldier with a wizard-like aura. The figure wears pr.png" id="4_awpre"]
+[ext_resource type="Texture2D" uid="uid://cvxgqyoljvflg" path="res://Assets/Art/zeta.png" id="4_fsvhx"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_wckcp"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="7_imoyh"]
 
@@ -96,7 +96,7 @@ autowrap_mode = 2
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(350, 450)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_awpre")
+texture = ExtResource("4_fsvhx")
 centered = false
 flip_h = true
 

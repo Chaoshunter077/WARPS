@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_1d3fx"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/alpha_gen_window.gd" id="2_tdo06"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_41lp3"]
-[ext_resource type="Texture2D" uid="uid://cga511vedqubp" path="res://Assets/Art/DALL·E 2024-11-10 16.32.34 - A full-body profile of a human knight in science fantasy heavy armor as an agent of order, without a helmet and without an earpiece to reveal his huma.png" id="4_efhn7"]
+[ext_resource type="Texture2D" uid="uid://bf55m508vy5rs" path="res://Assets/Art/aplha.png" id="4_bqq5r"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_2fsu3"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_7by7t"]
 
@@ -102,7 +102,7 @@ autowrap_mode = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(400, 400)
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_efhn7")
+texture = ExtResource("4_bqq5r")
 centered = false
 
 [node name="BackButton" type="Button" parent="."]

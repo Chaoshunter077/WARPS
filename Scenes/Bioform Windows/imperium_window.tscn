@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_bhtgg"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/imperium_window.gd" id="2_n14rh"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_jqofq"]
-[ext_resource type="Texture2D" uid="uid://cpfo47jnnc862" path="res://Assets/Art/DALL·E 2024-11-21 20.31.13 - An action shot of a sleek humanoid mecha in dynamic motion, drawn in black and white line art with a serious tone. The mecha is depicted leaping or do.png" id="4_xy4c2"]
+[ext_resource type="Texture2D" uid="uid://cyfm2kpxsslev" path="res://Assets/Art/imper.png" id="4_07mdg"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_y306d"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_ivl8v"]
 
@@ -108,7 +108,7 @@ autowrap_mode = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(160, 600)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xy4c2")
+texture = ExtResource("4_07mdg")
 centered = false
 
 [node name="BackButton" type="Button" parent="."]

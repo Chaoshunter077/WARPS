@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_ysvpr"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/petroan_window.gd" id="2_nnix6"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_k5rq6"]
-[ext_resource type="Texture2D" uid="uid://b5c3psob3m6l7" path="res://Assets/Art/DALL·E 2024-11-10 15.45.24 - A full-body profile of a dwarf in a grim dark fantasy style with heavy line art, inspired by the provided image. The dwarf has a stocky, muscular buil.jpg" id="4_ph4fs"]
+[ext_resource type="Texture2D" uid="uid://bssl2skxlnkxt" path="res://Assets/Art/petroan.jpg" id="3_uq2cp"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_w832s"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_ixb2r"]
 
@@ -29,7 +29,7 @@ expand_mode = 4
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(350, 470)
 scale = Vector2(0.55, 0.55)
-texture = ExtResource("4_ph4fs")
+texture = ExtResource("3_uq2cp")
 centered = false
 
 [node name="Title" type="Label" parent="."]

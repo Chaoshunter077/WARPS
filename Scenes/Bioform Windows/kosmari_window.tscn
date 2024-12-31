@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_tajyl"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/kosmari_window.gd" id="2_mh2gk"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_5hgpq"]
-[ext_resource type="Texture2D" uid="uid://dyry0cdb446i" path="res://Assets/Art/DALL·E 2024-11-10 16.02.59 - A full-body profile of an elf warrior in heavy armor as an agent of order, wielding a staff with a commanding presence in a grim dark fantasy style an.png" id="4_ejwim"]
+[ext_resource type="Texture2D" uid="uid://bqqwv1orcu24h" path="res://Assets/Art/kosmari2.png" id="3_s4u0y"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_k6o6p"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="7_m2w3j"]
 
@@ -29,7 +29,7 @@ expand_mode = 4
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(230, 435)
 scale = Vector2(0.55, 0.55)
-texture = ExtResource("4_ejwim")
+texture = ExtResource("3_s4u0y")
 centered = false
 
 [node name="Title" type="Label" parent="."]

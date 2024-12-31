@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_lnblw"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/gamma_window.gd" id="2_h0i1d"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_5djib"]
-[ext_resource type="Texture2D" uid="uid://d0agucjpe275b" path="res://Assets/Art/DALL·E 2024-11-10 15.21.47 - A full-body profile of an orc in a post-apocalyptic wasteland setting, drawn in a grim dark style with heavy line art, similar to previous designs. Th.png" id="4_hupkr"]
+[ext_resource type="Texture2D" uid="uid://carrqvjob347j" path="res://Assets/Art/Gamma.png" id="4_ph8dy"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_rteyl"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="7_v4xg8"]
 
@@ -96,7 +96,7 @@ autowrap_mode = 2
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(-150, 800)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_hupkr")
+texture = ExtResource("4_ph8dy")
 centered = false
 
 [node name="BackButton" type="Button" parent="."]

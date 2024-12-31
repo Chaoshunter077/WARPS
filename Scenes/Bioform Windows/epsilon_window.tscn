@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_h2uq3"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/epsilon_window.gd" id="2_x7j6o"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_1jjcd"]
-[ext_resource type="Texture2D" uid="uid://dblg7r0nbbmdt" path="res://Assets/Art/DALL·E 2024-11-20 08.23.04 - A full-body depiction of a Virekai in a shamanistic style, drawn in black and white line art with intricate and serious tones. The Virekai has orcish .png" id="4_dtu67"]
+[ext_resource type="Texture2D" uid="uid://0f7o7m7wheh" path="res://Assets/Art/epsilon.png" id="4_5muuj"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_3ernf"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_mp28e"]
 
@@ -104,7 +104,7 @@ autowrap_mode = 2
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(365, 450)
 scale = Vector2(0.53, 0.53)
-texture = ExtResource("4_dtu67")
+texture = ExtResource("4_5muuj")
 centered = false
 
 [node name="BackButton" type="Button" parent="."]

@@ -245,6 +245,7 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_right = 146.0
 offset_bottom = 91.0
 theme = ExtResource("2_0jtfw")

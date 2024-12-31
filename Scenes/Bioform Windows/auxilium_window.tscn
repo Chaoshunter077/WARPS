@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_bu1ne"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/auxilium_window.gd" id="2_nrd1b"]
+[ext_resource type="Texture2D" uid="uid://t8nq7cnk4v2r" path="res://Assets/Art/mechaimperium.jpg" id="3_icg2n"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_o3dx7"]
-[ext_resource type="Texture2D" uid="uid://ywmh6l83bkb1" path="res://Assets/Art/DALL·E 2024-11-10 15.08.56 - A full-body profile of a warforged inspired by D&D 5e in a grim dark science fantasy style, with heavy line art and no background. The warforged has a.jpg" id="4_dpasc"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_6mc2y"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="7_vh05p"]
 
@@ -29,7 +29,7 @@ expand_mode = 4
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(400, 380)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_dpasc")
+texture = ExtResource("3_icg2n")
 centered = false
 flip_h = true
 

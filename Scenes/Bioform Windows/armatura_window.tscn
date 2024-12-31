@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dmcervdjt2sli" path="res://Themes/Window.tres" id="1_ugmn5"]
 [ext_resource type="Script" path="res://Scripts/Bioform Windows/armatura_window.gd" id="2_dt1ge"]
 [ext_resource type="FontFile" uid="uid://bmgtgu7j6tj4" path="res://Assets/Font/BLKCHCRY.TTF" id="3_idinj"]
-[ext_resource type="Texture2D" uid="uid://dlp5bwu830rbf" path="res://Assets/Art/DALL·E 2024-11-21 20.27.14 - A full-body depiction of a human-sized mech inspired by Warforged from D&D 5e, based on the bottom left design from the previous image, drawn in black.png" id="4_edegb"]
+[ext_resource type="Texture2D" uid="uid://exfx0uxruw6b" path="res://Assets/Art/mecharmatura.png" id="4_8hyhl"]
 [ext_resource type="Theme" uid="uid://buynfywaa3567" path="res://Themes/windowbackbutton.tres" id="5_01egu"]
 [ext_resource type="Theme" uid="uid://771ftd4h4o2d" path="res://Themes/windowselectbutton.tres" id="6_r663t"]
 
@@ -105,7 +105,7 @@ autowrap_mode = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(325, 365)
 scale = Vector2(0.55, 0.55)
-texture = ExtResource("4_edegb")
+texture = ExtResource("4_8hyhl")
 centered = false
 
 [node name="BackButton" type="Button" parent="."]
